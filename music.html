@@ -1,0 +1,111 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto|Nixie+One" rel="stylesheet">
+<link rel="shortcut icon" href="http://niv-pit.surge.sh/tiny_deer.ico" type="image/x-icon">
+<link rel="icon" href="http://niv-pit.surge.sh/tiny_deer.ico" type="image/x-icon">        
+<link rel="stylesheet" type="text/css" href="main.css"> 
+
+<title>niv's stuff</title>
+
+<style>
+.playButton{
+	height:20px;
+	width: 20px;
+	border: none;
+}
+.play{background: url('images/play.png');}
+.pause{background: url('images/pause.png');}
+</style>
+
+<script>
+var music, playButtons;
+
+window.onload = function() {
+	console.log('boo!')
+	music = document.getElementsByTagName('audio');
+	playButtons = document.getElementsByClassName('playButton');
+	for (var i = 0; i < music.length; i++) {
+		playButtons[i].onclick = (function() { 
+			var j = i;
+			return function() {
+				if (music[j].paused) {
+					music[j].play();
+					playButtons[j].className = "playButton pause";
+				} else {
+					music[j].pause();
+					playButtons[j].className = "playButton play";
+				}
+			};
+		})();
+	}
+};
+</script>
+
+<div id="main">
+
+    <table id="fun">
+		<tr>
+			<td>
+				<img src="images/roach.gif" width="80" height="80" class="roach">
+			</td>
+			<td>
+				<h1 id="header">Niv's Stuff &#129420;</h1>
+				<div id="footer">
+					<a href="https://twitter.com/nivrad00">twitter</a> &middot;
+					<a href="https://nivrad00.tumblr.com/">tumblr</a> &middot;
+					<a href="https://soundcloud.com/nivrad00">soundcloud</a> &middot;
+					<a href="https://nivrad00.itch.io/">itch.io</a> &middot;
+					<a href="https://osu.ppy.sh/u/nivrad00">osu</a> &middot;
+					<a href="https://www.twitch.tv/nivrad00">twitch</a>
+				</div>
+			</td>
+			<td>
+				<img src="images/roach.gif" width="80" height="80" class="roach">
+			</td>
+		</tr>
+	</table>
+
+    <div id="nav">
+	    <a href='index.html'><span class="fancy">&#120142;</span>elcome</a>
+	    <a href='about.html'><span class="fancy">&#120120;</span>bout</a>
+	    <a href='games.html'><span class="fancy">&#120126;</span>ames</a>
+	    <a href='writing.html'><span class="fancy">&#120142;</span>riting</a>
+	    <p><span class="fancy">&#120132;</span>usic</p>
+	    <a href='art.html'><span class="fancy">&#120120;</span>rt</a>
+    </div>
+	
+	<p>under construction...</p>
+	
+    <div class="section-header">
+		<p><span class="fancy">&#120125;</span>uck</p>
+		<div class="divider"></div>
+    </div>
+    <table class="content">
+		<tr>
+			<td><img src="images/placeholder-icon.png"></td>
+			<td class="main">Logic Gate Lullaby</td>
+			<td class="info">idk</td>
+			<td>
+				<audio src="beepbox/Logic Gate Lullaby.wav" type="audio/wav"></audio>
+				<button class="playButton play"></button>
+			</td>
+		</tr>
+		<tr>
+			<td><img src="images/placeholder-icon.png"></td>
+			<td class="main">Blue Screen Blues</td>
+			<td class="info">idk</td>
+			<td>
+				<audio src="beepbox/Blue Screen Blues.wav" type="audio/wav"></audio>
+				<button class="playButton play"></button>
+			</td>
+		</tr>
+    </table>
+			
+    <div id="banners">
+		<a href="http://thicc.monster/"><img src="images/thicc-banner.gif"></a>
+		<a href="https://twitter.com/whydria"><img src="images/hydria-banner.png"></a>
+		<a href="https://nightoblane.neocities.org/"><img src="images/chrono-banner.jpg"></a>
+		<a href="https://niv-pit.surge.sh/"><img src="images/niv-banner.gif"></a>
+		<br>
+		<span class="smoll">&copy; me 2019&ndash;2020</span>
+    </div>
+	
+</div>

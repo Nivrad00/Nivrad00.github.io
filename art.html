@@ -1,0 +1,285 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto|Nixie+One" rel="stylesheet">
+<link rel="shortcut icon" href="http://niv-pit.surge.sh/tiny_deer.ico" type="image/x-icon">
+<link rel="icon" href="http://niv-pit.surge.sh/tiny_deer.ico" type="image/x-icon">        
+<link rel="stylesheet" type="text/css" href="main.css"> 
+
+<style>
+#gallery {
+	display: 	flex;
+	flex-wrap:	wrap;
+	align-items: center;
+	justify-content: space-around;
+} #gallery div {
+	margin: 10px;
+} #gallery img {
+	padding: 5px;
+	margin: 5px;
+	max-width:  250px;
+    max-height: 250px;
+}
+</style>
+
+<title>niv's stuff</title>
+
+<div id="main">
+
+    <table id="fun">
+		<tr>
+			<td>
+				<img src="images/roach.gif" width="80" height="80" class="roach">
+			</td>
+			<td>
+				<h1 id="header">Niv's Stuff &#129420;</h1>
+				<div id="footer">
+					<a href="https://twitter.com/nivrad00">twitter</a> &middot;
+					<a href="https://nivrad00.tumblr.com/">tumblr</a> &middot;
+					<a href="https://soundcloud.com/nivrad00">soundcloud</a> &middot;
+					<a href="https://nivrad00.itch.io/">itch.io</a> &middot;
+					<a href="https://osu.ppy.sh/u/nivrad00">osu</a> &middot;
+					<a href="https://www.twitch.tv/nivrad00">twitch</a>
+				</div>
+			</td>
+			<td>
+				<img src="images/roach.gif" width="80" height="80" class="roach">
+			</td>
+		</tr>
+	</table>
+
+    <div id="nav">
+	    <a href='index.html'><span class="fancy">&#120142;</span>elcome</a>
+	    <a href='about.html'><span class="fancy">&#120120;</span>bout</a>
+	    <a href='games.html'><span class="fancy">&#120126;</span>ames</a>
+	    <a href='writing.html'><span class="fancy">&#120142;</span>riting</a>
+	    <a href='music.html'><span class="fancy">&#120132;</span>usic</a>
+	    <p><span class="fancy">&#120120;</span>rt</p>
+    </div>
+	
+	<div id="gallery">
+	</div>
+
+	<script>
+		var names = [
+			"ana.png",
+			"forest.png",
+			"bird.png",
+			"ant lady intrigued by floating egg yolk.png",
+			"dragon with cool hat flying over oily wasteland.png",
+			"snake thing in marsh ruins under purple sky.png",
+			"1 he's doing his best.png",
+			"2 what's he looking at.png",
+			"3 a friend.jpg",
+			"4 hot steamy tree sex.png",
+			"5 nightmare.png",
+			"math.png",
+			"6 he has something to say.png",
+			"7 go on.png",
+			"8 who's this guy.png",
+			"riverside.png",
+			"labyrinth.png",
+			"open me up.png",
+			"sheets.png",
+			"spiral.png",
+			"worm.png",
+			"3-7-18.png",
+			"pretzel.png",
+			"the precipice.png",
+			"Mozzom.png",
+			"Otto and Aza.png",
+			"Eidie.png",
+			"how do you rotate text in ms paint.png",
+			"waving monster.png",
+			"Ixi.png",
+			"snowglobe.png",
+			"Kohchok.png",
+			"Ama on an adventure.png",
+			"m.png",
+			"sunny and clay.png",
+			"Alula.png",
+			"mushrooms.png",
+			"thursday plan.png",
+			"ice-worms2.png",
+			"Erotore.png",
+			"kinkajou-approved.png",
+			"a writer at work.jpg",
+			"to map list.png",
+			"coconut.png",
+			"peril.png",
+			"starflight.png",
+			"zzz.png",
+			"dragon.png",
+			"jay.png",
+			"heart.png",
+			"sunny.png",
+			"7-18-18.png",
+			"eastward 1.png",
+			"eastward 2.png",
+			"eastward 3.png",
+			"eastward 4.png",
+			"8-8-18.png",
+			"raske.png",
+			"sun2.png",
+			"9-30-18 funny mood tonight.png",
+			"bedtime.png",
+			"insangjeok.png",
+			"insangjeok2.png",
+			"insangjeok3.png",
+			"sunrise.png",
+			"wasting time.bmp",
+			"loops.png",
+			"ice.png",
+			"dear diary.png",
+			"floating window.png",
+			"mosaic.png",
+			"pepperoni.png",
+			"oh deer.png",
+			"deer.png",
+			"ref.png",
+			"cat.png",
+			"bitch.png",
+			"christmas.png",
+			"raske with a pan.png",
+			"london.png",
+			"xcv,jlj.png",
+			"notepad_2019-02-07_16-32-21.png",
+			"sad.png",
+			"drt the game.png",
+			"cubone ava bi2.png",
+			"lil boy.png",
+			"origami.png",
+			"queer deer.png",
+			"Untitled.png",
+			"firebreather.png",
+			"lemony.png",
+			"ugh. nevermind.png",
+			"saw a deer.png",
+			"ort.png",
+			"rotating-bean.gif",
+			"strands.png",
+			"hydria.png"
+		]
+		var captions = [
+			"ana",
+			"forest",
+			"bird",
+			"ant lady intrigued by floating egg yolk",
+			"dragon with cool hat flying over oily wasteland",
+			"snake thing in marsh ruins under purple sky",
+			"1. he's doing his best",
+			"2. what's he looking at",
+			"3. a friend",
+			"4. hot steamy tree sex",
+			"5. nightmare",
+			"math",
+			"6. he has something to say",
+			"7. go on",
+			"8. who's this guy",
+			"riverside",
+			"labyrinth",
+			"open me up",
+			"sheets",
+			"spiral",
+			"worm",
+			"3-7-18",
+			"pretzel",
+			"the precipice",
+			"Mozzom",
+			"Otto and Aza",
+			"Eidie",
+			"how do you rotate text in ms paint",
+			"Bob",
+			"Ixi",
+			"snowglobe",
+			"Kohchok",
+			"Ama on an adventure",
+			"m",
+			"sunny and clay",
+			"Alula",
+			"mushrooms",
+			"thursday plan",
+			"ice worms",
+			"Erotore",
+			"kinkajou approved",
+			"a writer at work",
+			"to map list",
+			"coconut",
+			"peril",
+			"starflight",
+			"콜콜콜",
+			"dragon",
+			'jay (char belongs to <a class="subtle" href="https://twitter.com/SharpiBees">SharpiBees</a>)',
+			"heart",
+			"sunny",
+			"7-18-18",
+			"eastward 1",
+			"eastward 2",
+			"eastward 3",
+			"eastward 4",
+			"8-8-18",
+			"raske",
+			"sun",
+			"9-30-18 funny mood tonight",
+			"bedtime",
+			"insangjeok",
+			"insangjeok2",
+			"insangjeok3",
+			"sunrise",
+			"wasting time",
+			"loops",
+			"ice",
+			"dear diary",
+			"floating window",
+			"mosaic",
+			"pepperoni",
+			"oh deer",
+			"deer",
+			"ref",
+			"cat",
+			"bitch",
+			"christmas",
+			"raske with a pan",
+			"london",
+			"xcv,jlj",
+			"notepad_2019-02-07_16-32-21",
+			"sad",
+			"drt the game",
+			"cubone ava",
+			"lil boy",
+			"origami",
+			"queer deer",
+			"untitled",
+			"firebreather",
+			"lemony",
+			"ugh. nevermind",
+			"saw a deer",
+			"ort",
+			"rotating bean",
+			"strands",
+			'hydria (char belongs to <a class="subtle" href="https://twitter.com/wHydria">Hydria</a>)'
+		]
+		
+		var gallery = document.getElementById("gallery")
+		
+		for (var i = names.length - 1; i >= 0; i --) {			
+			var path = 'art-and-shit/' + names[i];
+			var image = document.createElement('img');
+			image.setAttribute("src", path);
+			
+			var div = document.createElement('div')
+			div.appendChild(image);
+			div.innerHTML += '<br>' + captions[i]
+			
+			gallery.appendChild(div);
+		}
+		
+	</script>
+			
+    <div id="banners">
+		<a href="http://thicc.monster/"><img src="images/thicc-banner.gif"></a>
+		<a href="https://twitter.com/whydria"><img src="images/hydria-banner.png"></a>
+		<a href="https://nightoblane.neocities.org/"><img src="images/chrono-banner.jpg"></a>
+		<a href="https://niv-pit.surge.sh/"><img src="images/niv-banner.gif"></a>
+		<br>
+		<span class="smoll">&copy; me 2019&ndash;2020</span>
+    </div>
+	
+</div>

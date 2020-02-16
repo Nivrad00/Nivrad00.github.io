@@ -1,0 +1,13 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Emergent Beehavior",
+"dataUrl": "Emergent Beehavior.data.unityweb",
+"wasmCodeUrl": "Emergent Beehavior.wasm.code.unityweb",
+"wasmFrameworkUrl": "Emergent Beehavior.wasm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"}
+}
