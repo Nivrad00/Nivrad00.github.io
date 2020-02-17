@@ -1,38 +1,107 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto|Nixie+One" rel="stylesheet">
-<link rel="shortcut icon" href="http://niv-pit.surge.sh/tiny_deer.ico" type="image/x-icon">
-<link rel="icon" href="http://niv-pit.surge.sh/tiny_deer.ico" type="image/x-icon">        
+<link rel="shortcut icon" href="tiny_deer.ico" type="image/x-icon">
+<link rel="icon" href="tiny_deer.ico" type="image/x-icon">        
 <link rel="stylesheet" type="text/css" href="main.css"> 
 
 <title>niv's stuff</title>
 
 <style>
-.playButton{
-	height:20px;
-	width: 20px;
-	border: none;
+.content {
+    margin: auto;
+} .trackTitle {
+	width: 300px;
 }
-.play{background: url('images/play.png');}
-.pause{background: url('images/pause.png');}
+
+.play {
+	background: url('images/play.png');
+} .pause {
+	background: url('images/pause.png');
+} 
+.playButton{
+	background-repeat: no-repeat;
+    background-size: contain;
+	height:15px;
+	width: 15px;
+	border: none;
+	outline:none;
+}
+.audioplayer {
+	display: flex;
+    align-items: center;
+	background: #EEE;
+	padding: 5px 8px;
+}
+.timeline{
+	width: 300px;
+	height: 10px;
+	background: #BBB;
+	margin-left: 8px;
+	border-radius: 10px;
+	display: flex;
+    align-items: center;
+}
+.playhead{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: black;
+}
 </style>
 
 <script>
-var music, playButtons;
+var tracks, playButtons, playheads, timelines;
+var durations = [];
 
 window.onload = function() {
-	console.log('boo!')
-	music = document.getElementsByTagName('audio');
+	tracks = document.getElementsByTagName('audio');
 	playButtons = document.getElementsByClassName('playButton');
-	for (var i = 0; i < music.length; i++) {
+	playheads = document.getElementsByClassName('playhead');
+	timelines = document.getElementsByClassName('timeline');
+	
+	for (var i = 0; i < tracks.length; i++) {
 		playButtons[i].onclick = (function() { 
 			var j = i;
 			return function() {
-				if (music[j].paused) {
-					music[j].play();
+				if (tracks[j].ended) {
+					tracks[j].play();
+					playButtons[j].className = "playButton pause";
+					playheads[j].style.marginLeft = 0;
+				} else if (tracks[j].paused) {
+					tracks[j].play();
 					playButtons[j].className = "playButton pause";
 				} else {
-					music[j].pause();
+					tracks[j].pause();
 					playButtons[j].className = "playButton play";
 				}
+			};
+		})();
+		
+		tracks[i].ontimeupdate = (function() {
+			var j = i;
+			return function() {
+				var playheadProgress = tracks[j].currentTime / tracks[j].duration;
+				var timelineWidth = timelines[j].offsetWidth - playheads[j].offsetWidth;
+				playheads[j].style.marginLeft = timelineWidth * playheadProgress;
+			};
+		})();
+		
+		tracks[i].onended = (function() {
+			var j = i;
+			return function() {
+				playButtons[j].className = "playButton play";
+			};
+		})();
+		
+		timelines[i].onclick = (function() {
+			var j = i;
+			return function (event) {
+				var timelineWidth = timelines[j].offsetWidth - playheads[j].offsetWidth;
+				var clickDistance = event.clientX - timelines[j].getBoundingClientRect().left - playheads[j].offsetWidth / 2;
+				
+				if (clickDistance < 0) clickDistance = 0;
+				if (clickDistance > timelineWidth) clickDistance = timelineWidth;
+				
+				tracks[j].currentTime = tracks[j].duration * clickDistance / timelineWidth;
 			};
 		})();
 	}
@@ -72,33 +141,249 @@ window.onload = function() {
 	    <a href='art.html'><span class="fancy">&#120120;</span>rt</a>
     </div>
 	
-	<p>under construction...</p>
+	<p>
+		under construction...<br>
+		other than SPEEDCORE FOR THE SOUL, all tracks are in alphabetical order
+	</p>
 	
     <div class="section-header">
-		<p><span class="fancy">&#120125;</span>uck</p>
+		<p>SPEEDCORE FOR THE SOUL</p>
 		<div class="divider"></div>
     </div>
     <table class="content">
-		<tr>
-			<td><img src="images/placeholder-icon.png"></td>
-			<td class="main">Logic Gate Lullaby</td>
-			<td class="info">idk</td>
-			<td>
-				<audio src="beepbox/Logic Gate Lullaby.wav" type="audio/wav"></audio>
-				<button class="playButton play"></button>
-			</td>
-		</tr>
-		<tr>
-			<td><img src="images/placeholder-icon.png"></td>
-			<td class="main">Blue Screen Blues</td>
-			<td class="info">idk</td>
-			<td>
-				<audio src="beepbox/Blue Screen Blues.wav" type="audio/wav"></audio>
-				<button class="playButton play"></button>
-			</td>
-		</tr>
     </table>
-			
+	
+    <div class="section-header">
+		<p>Singles, Summer 2017&ndash;Present</p>
+		<div class="divider"></div>
+    </div>
+    <table class="content">
+    </table>
+	
+    <div class="section-header">
+		<p>Singles, God Knows&ndash;Summer 2017</p>
+		<div class="divider"></div>
+    </div>
+    <table class="content">
+    </table>
+	
+    <div class="section-header">
+		<p>Misc (SMW Ports, Beepbox Tunes)</p>
+		<div class="divider"></div>
+    </div>
+    <table class="content">
+    </table>
+	
+	<script>
+		var tables = document.getElementsByClassName("content");
+		var folders = ['SPEEDCORE FOR THE SOUL', 'newer music', 'older music', 'beepbox and SMW ports'];
+		var files = [
+			["Country Gentlemen & Noisekick - Fox on the Run (NIV'S MASHUP).mp3",
+			"Jack and the Beanstalk.mp3",
+			"Skip James - Hard Time Killin' Floor Blues (NIV'S REMIX).mp3",
+			"The B-52's - Love Shack (NIV'S REMIX).mp3",
+			"The Queenstons - Woodgrain (NIV'S REMIX).mp3"],
+			["Aftermath.m4a",
+			"bottle up the air.m4a",
+			"11-15-17 bug in an octavo box.mp3",
+			"Tom Johnson - Chord Catalog (Speedcore Remix).mp3",
+			"dictionary (wip).m4a",
+			"funny feeling.m4a",
+			"Leonardo Dreams of His Flying Machine.mp3",
+			"LeonardosdGJREGJH.mp3",
+			"love is blind.m4a",
+			"The Falls at Tivoli.mp3",
+			"Feelin' Alright.mp3",
+			"Ghostly Grotto.mp3",
+			"Happy Ending (WIP).mp3",
+			"Immobile.mp3",
+			"leave me alone.wav",
+			"LET ME OUT OF HERE.wav",
+			"Meow =3.mp3",
+			"past and future (wip).m4a",
+			"speedcore shepard tone.mp3",
+			"speedcore shepard tone 2.mp3",
+			"shower thoughts 3-2-18.mp3",
+			"Time Passes.mp3"],
+			["9V rmx.mp3",
+			"ambient project.mp3",
+			"amen doodle.mp3",
+			"Boss Rush Piano v2.mp3",
+			"bright night.mp3",
+			"Cerulean Song.mp3",
+			"Choose Your Shot Type.mp3",
+			"Drifting.mp3",
+			"Dusk Darter.mp3",
+			"Fantasia G.mp3",
+			"Flying Turtles.mp3",
+			"Forward Fantasy.mp3",
+			"Groundless.mp3",
+			"Half Cataclysm.mp3",
+			"hi, i'm steve rmx.mp3",
+			"higher higher higher rmx.mp3",
+			"How to Love a Robot.mp3",
+			"Ice Cream Truck Symphony.mp3",
+			"Indoctrination.mp3",
+			"Jazz Advantage.mp3",
+			"Koryo Garden.mp3",
+			"Lazy Town Hidden in the Marsh.mp3",
+			"mediocre expectations.mp3",
+			"Melodic Speedcore.mp3",
+			"Monster rmx.mp3",
+			"Motrin Quartet.mp3",
+			"My DM Won't Stop Making Stupid Jokes While My Character Dies Horribly.mp3",
+			"Mystery in Sepia.mp3",
+			"MYSTERY.mp3",
+			"New Town.mp3",
+			"Ode to Finchy.mp3",
+			"Ostenato.mp3",
+			"People of the Heavens.mp3",
+			"Progression No.1 in G Major.mp3",
+			"Progression No.3 in G Minor.mp3",
+			"Purple Waltz.mp3",
+			"Rejoice!.mp3",
+			"Rhythmland.mp3",
+			"Set In Stone.mp3",
+			"smokesucker.mp3",
+			"Smooth Sine.mp3",
+			"Soft Mice With No Ears Guard the Ice Artifact.mp3",
+			"Space Elevator.mp3",
+			"Speedcore is the Eighth Deadly Sin.mp3",
+			"Speedcore is the Eighth Deadly Sin (Trumpet Edition).mp3",
+			"Stream No.9.mp3",
+			"Stream No.12.mp3",
+			"Sun-Kissed Fields.mp3",
+			"The Death of Runnynosia.mp3",
+			"The Precipice.mp3",
+			"The Rose and the Nightingale.mp3",
+			"Triangle Waltz.mp3",
+			"Trumpet Adventure.mp3",
+			"Trumpets Are Evidently the Answer to Life's Greatest Questions (Instrumental).mp3",
+			"Untitled dog track.mp3",
+			"Upbeat bouncy project.mp3",
+			"View From a Car Window at Night.mp3"],
+			["Blue Screen Blues.wav",
+			"speedcore thing (Boot Sector Breakdown).wav",
+			"chewy harmony.wav",
+			"chipper amen tune.wav",
+			"Cyberspace Serenade (SMW Port).mp3",
+			"dramatic tune.wav",
+			"Ghostly Grotto (SMW port).mp3",
+			"idk.wav",
+			"Logic Gate Lullaby.wav",
+			"!! boss approaching !! (Malware Mayhem).wav",
+			"my first beepbox (Motherboard Melody).wav",
+			"Sunset Escape.mp3"]
+		]
+		var names = [
+			["Country Gentlemen & Noisekick - Fox on the Run (NIV'S MASHUP)",
+			"Jack and the Beanstalk",
+			"Skip James - Hard Time Killin' Floor Blues (NIV'S REMIX)",
+			"The B-52's - Love Shack (NIV'S REMIX)",
+			"The Queenstons - Woodgrain (NIV'S REMIX)"],
+			["Aftermath",
+			"bottle up the air",
+			"11-15-17 bug in an octavo box",
+			"Tom Johnson - Chord Catalog (Speedcore Remix)",
+			"dictionary (wip)",
+			"Funny Feeling",
+			"Leonardo Dreams of His Flying Machine",
+			"LeonardosdGJREGJH",
+			"Love is Blind",
+			"The Falls at Tivoli",
+			"Feelin' Alright",
+			"Ghostly Grotto",
+			"Happy Ending (WIP)",
+			"Immobile",
+			"Leave Me Alone",
+			"LET ME OUT OF HERE",
+			"Meow =3",
+			"past and future (wip)",
+			"speedcore shepard tone",
+			"speedcore shepard tone 2",
+			"shower thoughts 3-2-18",
+			"Time Passes.mp3"],
+			["9V rmx",
+			"ambient project",
+			"amen doodle",
+			"Boss Rush Piano v2",
+			"bright night",
+			"Cerulean Song",
+			"Choose Your Shot Type",
+			"Drifting",
+			"Dusk Darter",
+			"Fantasia G",
+			"Flying Turtles",
+			"Forward Fantasy",
+			"Groundless",
+			"Half Cataclysm",
+			"hi, i'm steve rmx",
+			"higher higher higher rmx",
+			"How to Love a Robot",
+			"Ice Cream Truck Symphony",
+			"Indoctrination",
+			"Jazz Advantage",
+			"Koryo Garden",
+			"Lazy Town Hidden in the Marsh",
+			"mediocre expectations",
+			"Melodic Speedcore",
+			"Monster rmx",
+			"Motrin Quartet",
+			"My DM Won't Stop Making Stupid Jokes While My Character Dies Horribly",
+			"Mystery in Sepia",
+			"MYSTERY",
+			"New Town",
+			"Ode to Finchy",
+			"Ostenato",
+			"People of the Heavens",
+			"Progression No.1 in G Major",
+			"Progression No.3 in G Minor",
+			"Purple Waltz",
+			"Rejoice!",
+			"Rhythmland",
+			"Set In Stone",
+			"Smokesucker",
+			"Smooth Sine",
+			"Soft Mice With No Ears Guard the Ice Artifact",
+			"Space Elevator",
+			"Speedcore is the Eighth Deadly Sin",
+			"Speedcore is the Eighth Deadly Sin (Trumpet Edition)",
+			"Stream No.9",
+			"Stream No.12",
+			"Sun-Kissed Fields",
+			"The Death of Runnynosia",
+			"The Precipice",
+			"The Rose and the Nightingale",
+			"Triangle Waltz",
+			"Trumpet Adventure",
+			"Trumpets Are Evidently the Answer to Life's Greatest Questions (Instrumental)",
+			"Untitled Dog Track",
+			"Upbeat bouncy project",
+			"View From a Car Window at Night"],
+			["Blue Screen Blues",
+			"Boot Sector Breakdown",
+			"chewy harmony",
+			"chipper amen tune",
+			"Cyberspace Serenade (SMW port)",
+			"dramatic tune",
+			"Ghostly Grotto (SMW port)",
+			"idk",
+			"Logic Gate Lullaby",
+			"Malware Mayhem",
+			"Motherboard Melody",
+			"Sunset Escape (SMW original)"]
+		]
+		
+		for (var j = 0; j < tables.length; j ++) {
+			for (var i = 0; i < names[j].length; i ++) {			
+				var path = 'music-and-shit/' + folders[j] + '/' + files[j][i];
+				tables[j].innerHTML += '<tr><td class="trackTitle">' + names[j][i] + '</td><td><audio src="' + path + '" type="audio/wav"></audio>'
+					+ '<div class="audioplayer"><button class="playButton play"></button><div class="timeline"><div class="playhead"></div></div></div>'		
+					+ '</td></tr>'
+			}
+		}
+	</script>
+	
     <div id="banners">
 		<a href="http://thicc.monster/"><img src="images/thicc-banner.gif"></a>
 		<a href="https://twitter.com/whydria"><img src="images/hydria-banner.png"></a>
