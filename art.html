@@ -4,19 +4,20 @@
 <link rel="stylesheet" type="text/css" href="main.css"> 
 
 <style>
-#gallery {
-	display: 	flex;
-	flex-wrap:	wrap;
-	align-items: center;
-	justify-content: space-around;
-} #gallery div {
-	margin: 10px;
-} #gallery img {
-	padding: 5px;
-	margin: 5px;
-	max-width:  250px;
-    max-height: 250px;
-}
+	body { background-color: #9cf; }
+	#gallery {
+		display: 	flex;
+		flex-wrap:	wrap;
+		align-items: center;
+		justify-content: space-around;
+	} #gallery div {
+		margin: 10px;
+	} #gallery img {
+		padding: 5px;
+		margin: 5px;
+		max-width:  250px;
+		max-height: 250px;
+	}
 </style>
 
 <title>niv's stuff</title>
@@ -257,18 +258,20 @@
 			'hydria (char belongs to <a class="subtle" href="https://twitter.com/wHydria">Hydria</a>)'
 		]
 		
-		var gallery = document.getElementById("gallery")
-		
-		for (var i = names.length - 1; i >= 0; i --) {			
-			var path = 'art-and-shit/' + names[i];
-			var image = document.createElement('img');
-			image.setAttribute("src", path);
+		window.onload = function() {
+			var gallery = document.getElementById("gallery")
 			
-			var div = document.createElement('div')
-			div.appendChild(image);
-			div.innerHTML += '<br>' + captions[i]
-			
-			gallery.appendChild(div);
+			for (var i = names.length - 1; i >= 0; i --) {			
+				var path = 'art-and-shit/' + names[i];
+				var image = document.createElement('img');
+				image.setAttribute("src", path);
+				
+				var div = document.createElement('div')
+				div.appendChild(image);
+				div.innerHTML += '<br>' + captions[i]
+				
+				gallery.appendChild(div);
+			}
 		}
 		
 	</script>
