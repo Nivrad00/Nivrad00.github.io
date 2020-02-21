@@ -70,7 +70,7 @@
 				tables[j].innerHTML += '<tr><td><img src="images/placeholder-icon.png"></td>'
 					+ '<td class="trackTitle">' + tracks[i].name + '</td>'
 					+ '<td class="info">' + tracks[i].date + '</td>'
-					+ '<td><audio src="' + path + '" type="audio/wav"></audio>'
+					+ '<td><audio src="' + path + '" preload="metadata" type="audio/wav"></audio>'
 					+ '<div class="audioplayer"><button class="playButton play"></button><div class="timeline"><div class="playhead"></div></div><div class="time">0:00 / 0:00</div></div>'		
 					+ '</td></tr>';
 			}
