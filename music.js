@@ -41,13 +41,21 @@ musicData = [
 				"file": "Immobile.mp3",
 				"date": "jan 2020"
 			}, {
-				"name": "Meow =3",
+				"name": "Spacedeer OST",
+				"file": "spacedeer.mp3",
+				"date": "jan 2020"
+			}, {
+				"name": "=3",
 				"file": "Meow =3.mp3",
 				"date": "dec 2019"
 			}, {
 				"name": "Time Passes",
 				"file": "Time Passes.mp3",
 				"date": "dec 2019"
+			}, {
+				"name": "The Bookless Room",
+				"file": "The Bookless Room.mp3",
+				"date": "nov 2019"
 			}, {
 				"name": "Ghostly Grotto",
 				"file": "Ghostly Grotto.mp3",
@@ -124,6 +132,10 @@ musicData = [
 				"name": "hi, i'm steve rmx",
 				"file": "hi, i'm steve rmx.mp3",
 				"date": "aug 2017"
+			}, {
+				"name": "The Songs of the Dead Are the Lamentations of the Living",
+				"file": "The Songs of the Dead Are the Lamentations of the Living.mp3",
+				"date": "jul 2017"
 			}, {
 				"name": "My DM Won't Stop Making Stupid Jokes While My Character Dies Horribly",
 				"file": "My DM Won't Stop Making Stupid Jokes While My Character Dies Horribly.mp3",
@@ -219,7 +231,7 @@ musicData = [
 				"file": "Half Cataclysm.mp3",
 				"date": ""
 			}, {
-				"name": "higher higher higher rmx",
+				"name": "BANDETTO - higher higher higher (rmx)",
 				"file": "higher higher higher rmx.mp3",
 				"date": ""
 			}, {
@@ -251,7 +263,7 @@ musicData = [
 				"file": "Melodic Speedcore.mp3",
 				"date": ""
 			}, {
-				"name": "Monster rmx",
+				"name": "Meg & Dia - Monster (rmx)",
 				"file": "Monster rmx.mp3",
 				"date": ""
 			}, {
@@ -303,10 +315,6 @@ musicData = [
 				"file": "The Rose and the Nightingale.mp3",
 				"date": "oct 2013"
 			}, {
-				"name": "Set In Stone",
-				"file": "Set In Stone.mp3",
-				"date": ""
-			}, {
 				"name": "Smooth Sine",
 				"file": "Smooth Sine.mp3",
 				"date": "sep 2013"
@@ -349,7 +357,7 @@ musicData = [
 		"folder": "beepbox and SMW ports",
 		"tracks": [
 			{
-				"name": "idk",
+				"name": "idk (wip)",
 				"file": "idk.wav",
 				"date": "sep 2019"
 			}, {
@@ -373,11 +381,11 @@ musicData = [
 				"file": "chipper amen tune.wav",
 				"date": "jan 2019"
 			}, {
-				"name": "dramatic tune",
+				"name": "dramatic tune (wip)",
 				"file": "dramatic tune.wav",
 				"date": "jan 2019"
 			}, {
-				"name": "chewy harmony",
+				"name": "chewy harmony (wip)",
 				"file": "chewy harmony.wav",
 				"date": "dec 2018"
 			}, {
