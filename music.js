@@ -1,6 +1,5 @@
 musicData = [
 	{
-		"name": "SPEEDCORE FOR THE SOUL",
 		"folder": "SPEEDCORE FOR THE SOUL",
 		"tracks": [
 			{
@@ -27,7 +26,6 @@ musicData = [
 		]
 	},
 	{
-		"name": "Singles and Doodles (Summer 2017-Present)",
 		"folder": "newer music",
 		"tracks": [
 			{
@@ -118,14 +116,49 @@ musicData = [
 				"name": "LeonardosdGJREGJH",
 				"file": "LeonardosdGJREGJH.mp3",
 				"date": "nov 2017"
-			}		
+			}, {
+				"name": "Indoctrination",
+				"file": "Indoctrination.mp3",
+				"date": "oct 2017"
+			}, {
+				"name": "hi, i'm steve rmx",
+				"file": "hi, i'm steve rmx.mp3",
+				"date": "aug 2017"
+			}, {
+				"name": "My DM Won't Stop Making Stupid Jokes While My Character Dies Horribly",
+				"file": "My DM Won't Stop Making Stupid Jokes While My Character Dies Horribly.mp3",
+				"date": "jun 2017"
+			}, {
+				"name": "View From a Car Window at Night",
+				"file": "View From a Car Window at Night.mp3",
+				"date": "jun 2017"
+			}, {
+				"name": "The Precipice",
+				"file": "The Precipice.mp3",
+				"date": "apr 2017"
+			}, {
+				"name": "Speedcore is the Eighth Deadly Sin",
+				"file": "Speedcore is the Eighth Deadly Sin.mp3",
+				"date": "apr 2017"
+			}, {
+				"name": "Trumpets Are Evidently the Answer to Life's Greatest Questions (Instrumental)",
+				"file": "Trumpets Are Evidently the Answer to Life's Greatest Questions (Instrumental).mp3",
+				"date": "mar 2017"
+			}
 		]
 	},
 	{
-		"name": "Singles (Who Knows-Summer 2017)",
 		"folder": "older music",
 		"tracks": [
 			{
+				"name": "People of the Heavens",
+				"file": "People of the Heavens.mp3",
+				"date": "dec 2016"
+			}, {
+				"name": "Smokesucker",
+				"file": "smokesucker.mp3",
+				"date": "nov 2016"
+			}, {
 				"name": "9V rmx",
 				"file": "9V rmx.mp3",
 				"date": ""
@@ -152,6 +185,10 @@ musicData = [
 			}, {
 				"name": "Choose Your Shot Type",
 				"file": "Choose Your Shot Type.mp3",
+				"date": ""
+			}, {
+				"name": "The Death of Runnynosia",
+				"file": "The Death of Runnynosia.mp3",
 				"date": ""
 			}, {
 				"name": "Drifting",
@@ -182,10 +219,6 @@ musicData = [
 				"file": "Half Cataclysm.mp3",
 				"date": ""
 			}, {
-				"name": "hi, i'm steve rmx",
-				"file": "hi, i'm steve rmx.mp3",
-				"date": ""
-			}, {
 				"name": "higher higher higher rmx",
 				"file": "higher higher higher rmx.mp3",
 				"date": ""
@@ -196,10 +229,6 @@ musicData = [
 			}, {
 				"name": "Ice Cream Truck Symphony",
 				"file": "Ice Cream Truck Symphony.mp3",
-				"date": ""
-			}, {
-				"name": "Indoctrination",
-				"file": "Indoctrination.mp3",
 				"date": ""
 			}, {
 				"name": "Jazz Advantage",
@@ -230,10 +259,6 @@ musicData = [
 				"file": "Motrin Quartet.mp3",
 				"date": ""
 			}, {
-				"name": "My DM Won't Stop Making Stupid Jokes While My Character Dies Horribly",
-				"file": "My DM Won't Stop Making Stupid Jokes While My Character Dies Horribly.mp3",
-				"date": ""
-			}, {
 				"name": "Mystery in Sepia",
 				"file": "Mystery in Sepia.mp3",
 				"date": ""
@@ -253,10 +278,6 @@ musicData = [
 				"name": "Ostenato",
 				"file": "Ostenato.mp3",
 				"date": ""
-			}, {
-				"name": "People of the Heavens",
-				"file": "People of the Heavens.mp3",
-				"date": "dec 2016"
 			}, {
 				"name": "Progression No.1 in G Major",
 				"file": "Progression No.1 in G Major.mp3",
@@ -278,17 +299,17 @@ musicData = [
 				"file": "Rhythmland.mp3",
 				"date": ""
 			}, {
+				"name": "The Rose and the Nightingale",
+				"file": "The Rose and the Nightingale.mp3",
+				"date": "oct 2013"
+			}, {
 				"name": "Set In Stone",
 				"file": "Set In Stone.mp3",
 				"date": ""
 			}, {
-				"name": "Smokesucker",
-				"file": "smokesucker.mp3",
-				"date": "nov 2016"
-			}, {
 				"name": "Smooth Sine",
 				"file": "Smooth Sine.mp3",
-				"date": ""
+				"date": "sep 2013"
 			}, {
 				"name": "Soft Mice With No Ears Guard the Ice Artifact",
 				"file": "Soft Mice With No Ears Guard the Ice Artifact.mp3",
@@ -296,19 +317,11 @@ musicData = [
 			}, {
 				"name": "Space Elevator",
 				"file": "Space Elevator.mp3",
-				"date": ""
-			}, {
-				"name": "Speedcore is the Eighth Deadly Sin",
-				"file": "Speedcore is the Eighth Deadly Sin.mp3",
-				"date": ""
-			}, {
-				"name": "Speedcore is the Eighth Deadly Sin (Trumpet Edition)",
-				"file": "Speedcore is the Eighth Deadly Sin (Trumpet Edition).mp3",
-				"date": ""
+				"date": "apr 2013"
 			}, {
 				"name": "Stream No.9",
 				"file": "Stream No.9.mp3",
-				"date": ""
+				"date": "may 2013"
 			}, {
 				"name": "Stream No.12",
 				"file": "Stream No.12.mp3",
@@ -316,18 +329,6 @@ musicData = [
 			}, {
 				"name": "Sun-Kissed Fields",
 				"file": "Sun-Kissed Fields.mp3",
-				"date": ""
-			}, {
-				"name": "The Death of Runnynosia",
-				"file": "The Death of Runnynosia.mp3",
-				"date": ""
-			}, {
-				"name": "The Precipice",
-				"file": "The Precipice.mp3",
-				"date": ""
-			}, {
-				"name": "The Rose and the Nightingale",
-				"file": "The Rose and the Nightingale.mp3",
 				"date": ""
 			}, {
 				"name": "Triangle Waltz",
@@ -338,68 +339,55 @@ musicData = [
 				"file": "Trumpet Adventure.mp3",
 				"date": ""
 			}, {
-				"name": "Trumpets Are Evidently the Answer to Life's Greatest Questions (Instrumental)",
-				"file": "Trumpets Are Evidently the Answer to Life's Greatest Questions (Instrumental).mp3",
-				"date": ""
-			}, {
 				"name": "Untitled Dog Track",
 				"file": "Untitled dog track.mp3",
-				"date": ""
-			}, {
-				"name": "Upbeat bouncy project",
-				"file": "Upbeat bouncy project.mp3",
-				"date": ""
-			}, {
-				"name": "View From a Car Window at Night",
-				"file": "View From a Car Window at Night.mp3",
 				"date": ""
 			}
 		]
 	},
 	{
-		"name": "Misc (SMW Ports and Beepbox Tunes)",
 		"folder": "beepbox and SMW ports",
 		"tracks": [
 			{
-				"name": "BeeSong",
-				"file": "BeeSong.wav",
-				"date": "jan 2019"
-			}, {
-				"name": "Blue Screen Blues",
-				"file": "Blue Screen Blues.wav",
-				"date": "nov 2018"
-			}, {
-				"name": "Boot Sector Breakdown",
-				"file": "speedcore thing (Boot Sector Breakdown).wav",
-				"date": "nov 2018"
-			}, {
-				"name": "chewy harmony",
-				"file": "chewy harmony.wav",
-				"date": "dec 2018"
-			}, {
-				"name": "chipper amen tune",
-				"file": "chipper amen tune.wav",
-				"date": "jan 2019"
-			}, {
-				"name": "Cyberspace Serenade",
-				"file": "Cyberspace Serenade.wav",
-				"date": "nov 2018"
-			}, {
-				"name": "Cyberspace Serenade (SMW port)",
-				"file": "Cyberspace Serenade (SMW Port).mp3",
-				"date": "jul 2019"
-			}, {
-				"name": "dramatic tune",
-				"file": "dramatic tune.wav",
-				"date": "jan 2019"
+				"name": "idk",
+				"file": "idk.wav",
+				"date": "sep 2019"
 			}, {
 				"name": "Ghostly Grotto (SMW port)",
 				"file": "Ghostly Grotto (SMW port).mp3",
 				"date": "aug 2019"
 			}, {
-				"name": "idk",
-				"file": "idk.wav",
-				"date": "sep 2019"
+				"name": "Cyberspace Serenade (SMW port)",
+				"file": "Cyberspace Serenade (SMW Port).mp3",
+				"date": "jul 2019"
+			}, {
+				"name": "Sunset Escape (SMW original)",
+				"file": "Sunset Escape.mp3",
+				"date": "jul 2019"
+			}, {
+				"name": "BeeSong",
+				"file": "BeeSong.wav",
+				"date": "jan 2019"
+			}, {
+				"name": "chipper amen tune",
+				"file": "chipper amen tune.wav",
+				"date": "jan 2019"
+			}, {
+				"name": "dramatic tune",
+				"file": "dramatic tune.wav",
+				"date": "jan 2019"
+			}, {
+				"name": "chewy harmony",
+				"file": "chewy harmony.wav",
+				"date": "dec 2018"
+			}, {
+				"name": "Boot Sector Breakdown",
+				"file": "speedcore thing (Boot Sector Breakdown).wav",
+				"date": "nov 2018"
+			}, {
+				"name": "Cyberspace Serenade",
+				"file": "Cyberspace Serenade.wav",
+				"date": "nov 2018"
 			}, {
 				"name": "Logic Gate Lullaby",
 				"file": "Logic Gate Lullaby.wav",
@@ -412,10 +400,6 @@ musicData = [
 				"name": "Motherboard Melody",
 				"file": "my first beepbox (Motherboard Melody).wav",
 				"date": "nov 2018"
-			}, {
-				"name": "Sunset Escape (SMW original)",
-				"file": "Sunset Escape.mp3",
-				"date": "jul 2019"
 			}
 		]
 	}

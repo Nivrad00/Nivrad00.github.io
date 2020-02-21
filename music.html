@@ -18,7 +18,7 @@
 	} .pause {
 		background: url('images/pause1.png');
 	} 
-	.playButton{
+	.playButton {
 		background-repeat: no-repeat;
 		background-size: contain;
 		height:15px;
@@ -31,27 +31,32 @@
 		align-items: center;
 		background: #EEE;
 		padding: 5px 8px;
+		width: 400px;
 	}
-	.timeline{
-		width: 300px;
+	.timeline {
+		flex-grow: 1;
+		margin: 0 8px 0 8px;
 		height: 10px;
 		background: #BBB;
-		margin-left: 8px;
 		border-radius: 10px;
 		display: flex;
 		align-items: center;
 	}
-	.playhead{
+	.playhead {
 		width: 10px;
 		height: 10px;
 		border-radius: 50%;
 		background: black;
+	}
+	.time {
 	}
 </style>
 
 <script src="music.js"></script>
 
 <script>
+	var parseTime = time => Math.floor(time / 60) + ':' + Math.floor(time % 60).toString().padStart(2, '0');
+
 	function loadTables() {
 		var tables = document.getElementsByClassName("content");
 		for (var j = 0; j < tables.length; j ++) {
@@ -65,7 +70,7 @@
 					+ '<td class="trackTitle">' + tracks[i].name + '</td>'
 					+ '<td class="info">' + tracks[i].date + '</td>'
 					+ '<td><audio src="' + path + '" type="audio/wav"></audio>'
-					+ '<div class="audioplayer"><button class="playButton play"></button><div class="timeline"><div class="playhead"></div></div></div>'		
+					+ '<div class="audioplayer"><button class="playButton play"></button><div class="timeline"><div class="playhead"></div></div><div class="time">0:00 / 0:00</div></div>'		
 					+ '</td></tr>';
 			}
 		}
@@ -76,6 +81,7 @@
 		var playButtons = document.getElementsByClassName('playButton');
 		var playheads = document.getElementsByClassName('playhead');
 		var timelines = document.getElementsByClassName('timeline');
+		var times = document.getElementsByClassName('time');
 		
 		for (var i = 0; i < tracks.length; i++) {
 			playButtons[i].onclick = (function() { 
@@ -101,6 +107,8 @@
 					var playheadProgress = tracks[j].currentTime / tracks[j].duration;
 					var timelineWidth = timelines[j].offsetWidth - playheads[j].offsetWidth;
 					playheads[j].style.marginLeft = timelineWidth * playheadProgress;
+					
+					times[j].innerHTML = parseTime(tracks[j].currentTime) + ' / ' + parseTime(tracks[j].duration);
 				};
 			})();
 			
@@ -121,6 +129,13 @@
 					if (clickDistance > timelineWidth) clickDistance = timelineWidth;
 					
 					tracks[j].currentTime = tracks[j].duration * clickDistance / timelineWidth;
+				};
+			})();
+			
+			tracks[i].ondurationchange = (function() {
+				var j = i;
+				return function() {
+					times[j].innerHTML = '0:00 / ' + parseTime(tracks[j].duration);
 				};
 			})();
 		}
@@ -178,7 +193,7 @@
     </table>
 	
     <div class="section-header">
-		<p><span class="fancy">&#x1D54A;</span>ingles (Summer 2017&ndash;Present)</p>
+		<p><span class="fancy">&#x1D54A;</span>ingles (2017&ndash;Present)</p>
 		<div class="divider"></div>
     </div>
     <table class="content">
@@ -186,7 +201,7 @@
     </table>
 	
     <div class="section-header">
-		<p><span class="fancy">&#x1D54A;</span>ingles (Who Knows&ndash;Summer 2017)</p>
+		<p><span class="fancy">&#x1D54A;</span>ingles (2012?&ndash;2016)</p>
 		<div class="divider"></div>
     </div>
     <table class="content">
