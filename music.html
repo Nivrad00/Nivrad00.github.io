@@ -64,10 +64,11 @@
 			tables[j].innerHTML = '';
 			var folder = musicData[j].folder
 			var tracks = musicData[j].tracks
+			var icon = musicData[j].icon
 			
 			for (var i = 0; i < tracks.length; i ++) {
 				var path = 'music-and-shit/' + folder + '/' + tracks[i].file;
-				tables[j].innerHTML += '<tr><td><img src="images/placeholder-icon.png"></td>'
+				tables[j].innerHTML += '<tr><td><img src="images/' + icon + '"></td>'
 					+ '<td class="trackTitle">' + tracks[i].name + '</td>'
 					+ '<td class="info">' + tracks[i].date + '</td>'
 					+ '<td><audio src="' + path + '" preload="metadata" type="audio/wav"></audio>'
@@ -184,6 +185,14 @@
 	<p>
 		sounds to tickle ur ears
 	</p>
+	
+    <div class="section-header">
+		<p><span class="fancy">&#120124;</span>NERGY</p>
+		<div class="divider"></div>
+    </div>
+    <table class="content">
+		<tr><td>loading...</td></tr>
+    </table>
 	
     <div class="section-header">
 		<p><span class="fancy">&#x1D54A;</span>PEEDCORE FOR THE <span class="fancy">&#x1D54A;</span>OUL</p>

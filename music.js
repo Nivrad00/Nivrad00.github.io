@@ -1,5 +1,53 @@
 musicData = [
 	{
+		"icon": "energy-icon.png",
+		"folder": "Energy",
+		"tracks": [
+			{
+				"name": "1. Energy",
+				"file": "1. Niv - Energy.wav",
+				"date": "jul 2020"
+			}, {
+				"name": "2. My Bugs and Me",
+				"file": "2. Niv - My Bugs and Me.wav",
+				"date": "jul 2020"
+			}, {
+				"name": "3. It's Speedcore",
+				"file": "3. Niv - It's Speedcore.wav",
+				"date": "jul 2020"
+			}, {
+				"name": "4. Memory",
+				"file": "4. Niv - Memory.wav",
+				"date": "jul 2020"
+			}, {
+				"name": "5. Pete Drake - Forever (Niv's Remix)",
+				"file": "5. Pete Drake - Forever (Niv's Remix).wav",
+				"date": "jul 2020"
+			}, {
+				"name": "6. Be Not Afraid",
+				"file": "6. Niv - Be Not Afraid.wav",
+				"date": "jul 2020"
+			}, {
+				"name": "7. Farts Are Funny",
+				"file": "7. Niv - Farts Are Funny.wav",
+				"date": "jul 2020"
+			}, {
+				"name": "8. Midnight Pasta Recipe",
+				"file": "8. Niv - Midnight Pasta Recipe.wav",
+				"date": "jul 2020"
+			}, {
+				"name": "9. Apocalyptic Love Song",
+				"file": "9. Niv - Apocalyptic Love Song.wav",
+				"date": "jul 2020"
+			}, {
+				"name": "10. Time Passes",
+				"file": "10. Niv - Time Passes.wav",
+				"date": "jul 2020"
+			}
+		]
+	},
+	{
+		"icon": "soul-icon.png",
 		"folder": "SPEEDCORE FOR THE SOUL",
 		"tracks": [
 			{
@@ -26,6 +74,7 @@ musicData = [
 		]
 	},
 	{
+		"icon": "placeholder-icon.png",
 		"folder": "newer music",
 		"tracks": [
 			{
@@ -168,6 +217,7 @@ musicData = [
 		]
 	},
 	{
+		"icon": "placeholder-icon.png",
 		"folder": "beepbox and SMW ports",
 		"tracks": [
 			{
@@ -230,6 +280,7 @@ musicData = [
 		]
 	},
 	{
+		"icon": "placeholder-icon.png",
 		"folder": "older music",
 		"tracks": [
 			{
