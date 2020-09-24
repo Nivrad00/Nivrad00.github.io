@@ -1,0 +1,136 @@
+<html>
+<head>
+    <title>The Actually Most Dangerous Writing App</title>
+
+    <style>
+    html {
+        background-color: #f6f6f6;
+        height: 100%;
+        margin: 0;
+        font-family: Verdana, Geneva, sans-serif;
+    }
+    #main {
+        position: absolute;
+        max-width: 800px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        top: 10px;
+        margin: auto;
+    }
+    #progress {
+        width: 100%;
+        background-color: #eee;
+    }
+    #bar {
+        width: 0;
+        height: 10px;
+        background-color: orange;
+    }
+    #text {
+        position: absolute;
+        width: 100%;
+        top: 10px;
+        bottom: 0px;
+        left: 0px;
+        padding: 30px 40px;
+        border: none;
+        resize: none;
+        outline: none;
+        font-size: 18px;
+        font-family: Verdana, Geneva, sans-serif;
+        scroll-padding: 30px;
+    }
+    #text::placeholder {
+        color: #999;
+    }
+    #sidebar {
+        position: absolute;
+        padding: 10px;
+        font-size: 16px;
+    }
+    @media (max-width: 1200px) {
+        #main {
+            top: 50px;
+        }
+        #sidebar {
+            max-width: 800px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }    
+    }
+    </style>
+
+    <script src="jquery-3.5.1.min.js"></script>
+
+    <script>
+    const speed = 0.2;
+    let width = 0;
+    let state = "setup"; // setup, writing, finished
+    let id;
+
+    function startGame() {
+        id = setInterval(frame, 10);
+        state = "writing"
+        $("#text").attr("placeholder", "");
+        $("#hardcore").attr("disabled", true);
+        $("#hardcore-label").css("color", "#999");
+    }
+
+    function endGame(save = false) {
+        clearInterval(id);
+        $("#text").attr("readonly", true);
+        $("#text").css("color", "#999");
+        state = "finished";
+        if (!save && $("#hardcore").is(':checked'))
+            $("#text").val("");
+    }
+
+    function frame() {
+        if (width >= 100)
+            endGame();
+        else {
+            width += speed;
+            $("#bar").css("width", width + "%");
+         }
+    }
+
+    $(document).ready(() => {
+        $("#text").on("input", () => {
+            if (state == "setup") 
+                startGame();
+            width = 0;
+        });
+
+        $("#hardcore").change(function() {
+            if (this.checked)
+                $("#text").attr("placeholder", "Start writing. Your work will be deleted if you stop for too long. Press CTRL + Enter to finish.");
+            else
+                $("#text").attr("placeholder", "Start writing. The text box will be disabled if you stop for too long.");
+        });
+
+        $("#hardcore").change();
+    });
+
+    $(document).keydown(event => {
+        if (state == "writing" && $("#hardcore").is(':checked') && event.keyCode == 13 && event.ctrlKey)
+            endGame(true);
+    });
+
+    </script>
+
+</head>
+<body>
+    <div id="sidebar">
+        <input type="checkbox" id="hardcore" name="hardcore">
+        <label id="hardcore-label" for="hardcore">Hardcore mode</label>
+    </div>
+    <div id="main">
+        <div id="progress">
+            <div id="bar"></div>
+        </div>
+        <textarea id="text"></textarea>
+    </div>
+</body>
+</html>
