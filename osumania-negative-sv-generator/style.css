@@ -1,0 +1,62 @@
+html {
+	padding: 0;
+	margin: 0;
+}
+body {
+    max-width: 800px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+input {
+	max-width: 100px;
+}
+textarea {
+	min-height: 200px;
+}
+hr {
+	margin: 30px -10px;
+}
+h1 {
+	text-align: center;
+	font-weight: normal;
+}
+#header {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+
+
+#options {
+	display: flex;
+}
+#optionInputs {
+	flex: 0 0 280px;
+}
+#optionDescriptions {
+	color: gray;
+}
+#optionDescriptions > * {
+	padding: 5px 20px;
+}
+
+
+.optionRow {
+	display: flex;
+}
+.optionRow > * {	
+	margin: 7px 10px;
+}
+.optionRow > *:first-child {
+	flex: 0 0 130px;
+	text-align: right;
+}
+.optionRow > *:nth-child(2) {
+	flex: 1 0 auto;
+}
+
+#go {
+	width: 50px;
+}

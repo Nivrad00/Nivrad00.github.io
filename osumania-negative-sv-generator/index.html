@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>osu!mania Negative SV Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <div id="header">
+		<img src="roach.gif" width="80" height="80">
+		<h1>osu!mania Negative SV Generator</h1>
+		<img src="roach.gif" width="80" height="80">
+	</div>
+	
+	<p>This app automatically generates negative speed effects in osu!mania!</p>
+	<p>Paste the contents of an .osu file into the Input box, and the app will generate a new difficulty where all timing points with Kiai Mode enabled are interpreted as negative speeds.</p>
+	
+	<div id='options'>
+		<div id='optionInputs'>
+			<div class='optionRow'>
+				<label for="bpm">BPM</label>
+				<div>
+					<input type="text" id="bpm" name="bpm">
+				</div>
+			</div>
+			
+			<div class='optionRow'>
+				<label for="diffName">Difficulty name</label>
+				<div>
+					<input type="text" id="diffName" name="diffName">
+				</div>
+			</div>
+	
+			<div class='optionRow'>
+				<label for="advancedOptions">Advanced options</label>
+				<div>
+					<input type="checkbox" id="advancedOptions" name="advancedOptions">
+				</div>
+			</div>
+			
+			<div class='optionRow advanced'>
+				<label for="framerate">Framerate</label>
+				<div>
+					<input type="text" id="framerate" name="framerate" value="20">
+				</div>
+			</div>
+			
+			<div class='optionRow advanced'>
+				<label for="renderDistance">Render distance</label>
+				<div>
+					<input type="text" id="renderDistance" name="renderDistance" value="600">
+				</div>
+			</div>
+			
+			<div class='optionRow advanced'>
+				<label for="renderLimit">Render limit</label>
+				<div>
+					<input type="text" id="renderLimit" name="renderLimit" value="4">
+				</div>
+			</div>
+			
+			<div class='optionRow advanced'>
+				<label for="startTime">Start time</label>
+				<div>
+					<input type="text" id="startTime" name="startTime" value="0">
+				</div>
+			</div>
+	
+			<div class='optionRow advanced'>
+				<label for="extraSpeeds">Extra speeds</label>
+				<div>
+					<input type="checkbox" id="extraSpeeds" name="extraSpeeds">
+				</div>
+			</div>
+		</div>
+		
+		<div id='optionDescriptions'>
+			<div data-option='framerate'>
+				How often the screen "refreshes" during negative speed effects, in frames per second. Higher values look smoother but more glitchy. Default is 20.
+			</div>
+			<div data-option='renderDistance'>
+				The maximum distance from the judgement bar that notes can render during negative speed effects, measured by the number of milliseconds it would take to cover that distance at default speed. Higher values look more glitchy, but support lower scroll speeds. Default is 600.
+			</div>
+			<div data-option='renderLimit'>
+				How many chords (groups of notes with the same timestamp) can render at once. Higher values look more glitchy. Default is 4.
+			</div>
+			<div data-option='startTime'>
+				It can be inconvenient to test maps with negative speed effects because 1) you can't open them in the editor, and 2) you can't skip the intro. Use this setting to generate test difficulties where the provided number of milliseconds are cut from the start. Note: You will have to cut the audio accordingly!
+			</div>
+			<div data-option='extraSpeeds'>
+				When enabled, interprets 0.01x as a stop, 10.00x as a teleport, and 9.01x–9.99x as 10x–990x.
+			</div>
+		</div>
+	</div>
+	
+	<div class='optionRow'>
+		<p>Input</p>
+		<textarea id="input"></textarea>
+	</div>
+	
+	<div class='optionRow'>
+		<div></div>
+		<div><button id="go">Go</button></div>
+	</div>
+	
+	<div class='optionRow'>
+		<p>Output</p>
+		<textarea id="output"></textarea>
+	</div>
+	
+	<hr>
+	
+	<p>Feel free to contact me at Niv#3724 on Discord or Nivrad00 on osu! for bug fixes and feature requests. Source code is available <a href='script.js'>here</a> if you would like to make your own changes :)</p>
+	
+	<p>Known limitations:</p>
+	<ul>
+		<li>The note animation technique where only one chord is rendered at a time is not implemented</li>
+		<li>LNs are turned into single notes during negative speed effects</li>
+		<li>No measure line support</li>
+		<li>Kiai Mode can't be used for its intended purpose, unless you add it back in manually</li>
+	</ul>
+	
+	<p>Example of a map that uses this app coming soon :3</p>
+</body>
+
+</html>
