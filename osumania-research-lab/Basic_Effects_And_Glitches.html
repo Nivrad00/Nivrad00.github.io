@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="style.css">
+<title>Basic Effects And Glitches - osu!mania Research Lab</title>
+</head>
+
+<body>
+<p><a href="index.html">Back</a></p>
+<h1 id="firstHeading" class="firstHeading">Basic Effects And Glitches</h1>
+
+<p>All the effects/glitches listed in here are simple enough in explanation to where they do not warrant their own page.
+</p>
+
+<div id="toc" class="toc"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2>Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Bodyless_LNs_and_Glitched_LN_Bodies"><span class="tocnumber">1</span> <span class="toctext">Bodyless LNs and Glitched LN Bodies</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#LN_Auto-hits"><span class="tocnumber">2</span> <span class="toctext">LN Auto-hits</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Playfield_Unrendering"><span class="tocnumber">3</span> <span class="toctext">Playfield Unrendering</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#1ms_Red_Lines"><span class="tocnumber">4</span> <span class="toctext">1ms Red Lines</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#0ms_LNs"><span class="tocnumber">5</span> <span class="toctext">0ms LNs</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Bodyless_LNs_and_Glitched_LN_Bodies">Bodyless LNs and Glitched LN Bodies</span></h2>
+<p>If there is a section with very high speed (say, 100000000000 BPM) during an LN, the body of the LN may disappear visually. However, the LN will act like a normal LN. 
+</p><p>At certain speeds, the body of the LN may exhibit visual glitches rather than disappearing, where it appears to become detached from the LN head/tail and "stutter" rather than scrolling smoothly.
+</p>
+<h2><span class="mw-headline" id="LN_Auto-hits">LN Auto-hits</span></h2>
+<p>If an LN starts at the 0ms mark of a beatmap and has a length shorter than the miss window of the current OD, the note will hit. If it's within the 300 range, it'll hit with a 300 score; if it's in the 200-50 range, it'll hit with a 200 score.
+</p>
+<h2><span class="mw-headline" id="Playfield_Unrendering">Playfield Unrendering</span></h2>
+<p>Placing a note at 2^31-1ms (2147483647ms) causes the playfield to unrender after hitting the first note.
+</p>
+<h2><span class="mw-headline" id="1ms_Red_Lines">1ms Red Lines</span></h2>
+<p>If two or more red lines are within 1ms of each other, only the last red line with render a bar line on the playing field, so to create bar line effects, make sure to have red lines more than 1ms apart. (e.g. 1.001ms)
+</p>
+<h2><span class="mw-headline" id="0ms_LNs">0ms LNs</span></h2>
+<p>LNs that are 0ms in length (the start of the LN has the same timing as the end of the LN) are not hitable by autoplay properly and will result in a miss.
+</p></body>
+</html>

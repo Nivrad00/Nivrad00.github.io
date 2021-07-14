@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="style.css">
+<title>P-Note - osu!mania Research Lab</title>
+</head>
+
+<body>
+<p><a href="index.html">Back</a></p>
+<h1 id="firstHeading" class="firstHeading">P-Note</h1>
+<p><i><b>DISCLAIMER:</b> This page is incomplete and research is unfinished. Please contact Nivrad00#3724 on Discord with any questions.</i>
+</p><p>A <b>p-note</b> is a long note with an ending timestamp that is earlier than the starting timestamp. P-notes cause a number of glitches that can be exploited to create gimmick maps. Notably, p-notes used to be the only known method of creating fake notes, before NaN notes were discovered.
+</p><p>This page is maintained by Nivrad00 and is based on work by Nivrad00, NovaSagittari, Davvy, Agka, and other members of the osu!mania Research Lab Discord. P-notes are named after the osu! player who discovered this phenomenon, Pope Gadget.
+</p>
+<div id="toc" class="toc"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2>Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Editor_Behavior"><span class="tocnumber">1.1</span> <span class="toctext">Editor Behavior</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Types_of_P-notes"><span class="tocnumber">1.2</span> <span class="toctext">Types of P-notes</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Types_of_Corrupted_Notes"><span class="tocnumber">1.3</span> <span class="toctext">Types of Corrupted Notes</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Tailless_LNs"><span class="tocnumber">1.4</span> <span class="toctext">Tailless LNs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Factors_That_Influence_P-note_Type"><span class="tocnumber">2</span> <span class="toctext">Factors That Influence P-note Type</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Position"><span class="tocnumber">2.1</span> <span class="toctext">Position</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Length"><span class="tocnumber">2.2</span> <span class="toctext">Length</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Overlapping_LNs_and_P-notes"><span class="tocnumber">2.3</span> <span class="toctext">Overlapping LNs and P-notes</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Position_of_Other_Objects"><span class="tocnumber">2.4</span> <span class="toctext">Position of Other Objects</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Unloading_Threshold"><span class="tocnumber">3</span> <span class="toctext">Unloading Threshold</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Equation"><span class="tocnumber">3.1</span> <span class="toctext">Equation</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Variability"><span class="tocnumber">3.2</span> <span class="toctext">Variability</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Worm_Theory"><span class="tocnumber">4</span> <span class="toctext">Worm Theory</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Buffer_Zone"><span class="tocnumber">4.1</span> <span class="toctext">Buffer Zone</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Diagram"><span class="tocnumber">4.2</span> <span class="toctext">Diagram</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Algorithm"><span class="tocnumber">4.3</span> <span class="toctext">Algorithm</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Ongoing_Research"><span class="tocnumber">4.4</span> <span class="toctext">Ongoing Research</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Corruption_Zone"><span class="tocnumber">5</span> <span class="toctext">Corruption Zone</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#Corrupted_Notes"><span class="tocnumber">5.1</span> <span class="toctext">Corrupted Notes</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:352px;"><img alt="" src="images/Memestic_riotz.png" decoding="async" width="350" height="197" class="thumbimage" />  <div class="thumbcaption"><div class="magnify"></div>P-notes in the editor</div></div></div>
+<p>When playing a map, p-notes will render as two separate entities: an LN tail at the ending timestamp, followed by an LN head at the starting timestamp. There is no visible LN body. These two entities are called the <b>p-note tail</b> and <b>p-note head</b> respectively. Note that the tail comes before the head!
+</p><p>There are various types of p-notes, each of which has different qualities, but there are a few commonalities. All p-note ends act like fakes, or notes that cannot be hit or missed and have no effect on the combo or score. Autoplay will ignore p-note ends completely, but it will try to hit p-note starts and then hold down the key until the next note in the lane, which it will miss. In a multiplayer lobby, p-notes have been observed to cause the map to end immediately. 
+</p>
+<h3><span class="mw-headline" id="Editor_Behavior">Editor Behavior</span></h3>
+<p>In the editor, p-notes render only if both the head and the tail appear within the editor's view. An LN body will actually be rendered, beginning at the p-note head and extending upward. However, this LN body is not present when playing the map.
+</p><p>The position of the p-note can be adjusted by dragging or copy-pasting the head, but the tail length cannot be adjusted except when the p-note tail automatically snaps after being dragged. P-notes can be created and edited by changing the timestamps in the .osu file. Unlike some other types of glitched notes (eg. notes with negative timestamps), p-notes will usually not disappear upon entering the editor or saving.
+</p>
+<h3><span class="mw-headline" id="Types_of_P-notes">Types of P-notes</span></h3>
+<p>P-note behavior can be categorized into these types:
+</p>
+<dl><dt>Mini p-notes</dt>
+<dd>These p-notes are short enough that the judgement windows of the head and tail overlap. That means mini p-notes can be hit almost like short LNs, by tapping the head and immediately releasing.</dd></dl>
+<dl><dt>Bomb p-notes</dt>
+<dd>The head of a bomb p-note always yields a miss, even if you press the key correctly.</dd></dl>
+<dl><dt>Fake p-notes</dt>
+<dd>The head of a fake p-note can't be hit or missed, and it has no effect on score or combo. For this type of p-note, heads and tails are effectively identical in behavior. This type of p-note can also <a href="#Corrupted_Notes">corrupt</a> surrounding notes.</dd></dl>
+<dl><dt>Auto p-notes</dt>
+<dd>These p-notes will always yield an accuracy judgement, somewhere between 50 and 300, even if you don't press any keys. This happens when the timestamp of the p-note tail is very close to 0 ms. This behavior is equivalent to an <a href="Basic_Effects_And_Glitches.html#LN_Auto-hits" title="Basic Effects And Glitches">LN auto-hit</a>, so it isn't unique to p-notes.</dd></dl>
+<dl><dt>End-of-map p-notes</dt>
+<dd>If a p-note head is the last object in a map, the map will start fading out before the p-note can reach the judgement bar, possibly resulting in it <i>never</i> crossing the judgement bar. This may be because osu! looks at the position of single notes and LN tails when deciding to end the map, but not the position of LN heads.</dd></dl>
+<p>Fake p-notes and end-of-map p-notes can cause a score calculation error at the end of the map. This will not prevent the map from ending or the score from being saved locally, but it <i>may</i> prevent scores from being submitted to the global leaderboard, which has been known to happen with similar glitches. We won't be able to verify this until a map with a fake p-note gets loved or ranked. This behavior has changed from earlier versions of osu!, where any fake p-note would cause the player to fail at the end of the map. Also, it is impossible to get 1,000,000 score on any map with fake p-notes.
+</p><p>Maps with fakes have been observed to end without a score calculation error, but the reason why is unknown. Also, there is some variability on whether a score calculation occurs if an end-of-map p-note crosses the judgement bar during the fading out period. This may be dependent on how close the p-note is to the previous, normal note.
+</p><p>As an aside, end-of-map p-notes can be exploited in a number of ways:
+</p>
+<ul><li>Preventing the player from encountering the head of a bomb p-note, which would have otherwise forced them to miss</li>
+<li>Artificially extending the length of a map</li>
+<li>Displaying notes on screen that never actually reach the judgement bar</li></ul>
+<h3><span class="mw-headline" id="Types_of_Corrupted_Notes">Types of Corrupted Notes</span></h3>
+<p>A fake p-note can cause nearby notes to exhibit glitchy behavior. These notes are called <b>corrupted notes</b>. This happens because fake p-notes create a <a href="#Corruption_Zone">corruption zone</a>, which prevents the player from interacting with notes on any lane, whether by hitting them or missing them. See the section on the corruption zone for more info.
+</p><p>There are two main types of corrupted notes:
+</p>
+<dl><dt>Fake notes</dt>
+<dd>Like fake p-notes, fake notes can't be hit or missed.</dd></dl>
+<dl><dt>J-notes</dt>
+<dd>J-notes are notes that can be hit, but can't be late-missed.</dd></dl>
+<p>J-notes are named after a similar phenomenon from the discontinued web game Feel the Beats, which was in turn named after FtB player Jxyden.
+</p>
+<h3><span class="mw-headline" id="Tailless_LNs">Tailless LNs</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><img alt="" src="images/Tailless_ln.png" decoding="async" width="300" height="307" class="thumbimage" />  <div class="thumbcaption"><div class="magnify"></div>Tailless LNs start in the buffer zone of a long p-note and extend out of it</div></div></div>
+<p><b>Tailless LNs</b> are another type of glitchy note caused by proximity to p-notes. This is not technically a corrupted note, as this behavior is independent of the corruption zone. These are the criteria for a p-note to create a tailless LN:
+</p>
+<ul><li>The p-note must be <a href="#Length">long</a></li>
+<li>The LN must start during the <a href="#Buffer_Zone">buffer zone</a> and end after the buffer zone</li>
+<li>The LN must not be <a href="#Corruption_Zone">corrupted</a></li></ul>
+<p>An equivalent way of stating the second point is that when the p-note head reaches the judgement bar, the LN head must have passed the judgement bar, but not unloaded. 
+</p><p>Tailless LNs act as if there is no LN tail, though the tail is still visible. If a player holds down a tailless LN to the end, the combo will stop going up, but there will be no accuracy judgement. This will happen regardless if the player correctly times the release or continues holding onto the LN. Additionally, the "holding a LN" effect will continue playing even after the LN ends, and even after the player releases the key.
+</p>
+<h2><span class="mw-headline" id="Factors_That_Influence_P-note_Type">Factors That Influence P-note Type</span></h2>
+<p>The following criteria can be used to determine what type of p-note is created. It is not known for sure which criteria take precedence over the others, but these sections have been arranged in order of descending priority to the best of our knowledge.
+</p>
+<h3><span class="mw-headline" id="Position">Position</span></h3>
+<p>If a p-note's tail is close to 0 ms, it is likely to become an auto p-note. Additionally, if a p-note's tail has a negative timestamp, the p-note is likely to become a fake. The specific criteria for these two situations have not been investigated.
+</p><p>On the other hand, if the very last object in a map is a p-note head or a group of p-note heads, the map will end before the heads reach the judgement line. In other words, osu! will take p-note tails into consideration when deciding when to end the map, but not p-note heads. The behavior of these end-of-map p-notes has not been investigated thoroughly.
+</p><p>If a p-note is not near the beginning or end of the map, then the position has no affect on its behavior.
+</p>
+<h3><span class="mw-headline" id="Length">Length</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><img alt="" src="images/Mini_vs_short.png" decoding="async" width="300" height="275" class="thumbimage" />  <div class="thumbcaption"><div class="magnify"></div>Unlike short p-notes, mini p-notes have head and tail judgement windows that overlap.</div></div></div>
+<p>P-notes can be categorized by length:
+</p>
+<ul><li>If the p-note is short enough that the judgement windows of the head and tail overlap, it will become a mini p-note.</li>
+<li>If the p-note is too long to be a mini p-note, but shorter than the <a href="#Unloading_Threshold">unloading threshold</a>, it will become a bomb. These notes are sometimes called <b>short p-notes</b>.</li>
+<li>If the p-note is longer than the unloading threshold, further criteria are needed to determine its type. These notes are sometimes called <b>long p-notes</b>.</li></ul>
+<p>Here is an equivalent definition of short and long p-notes, using the definition of the unloading thershold. The head of a short p-notes reaches the judgement bar before its tail can unload. However, the tail of a long p-notes unloads before its head reaches the judgement bar.
+</p><p>Due to random variation in unloading time, a p-note with a length that is within a few milliseconds of the unloading threshold may exhibit unstable behavior, acting like a short p-note in one playthrough and a long p-note in the next. 
+</p><p>Note that there is no categorical distinction between mini and short p-notes. As you make a mini p-note longer and longer, it will gradually become more difficult to hit, as the judgement window overlap gets smaller. Eventually, it will become impossible to hit, at which point it is classified as a short p-note.
+</p>
+<h3><span class="mw-headline" id="Overlapping_LNs_and_P-notes">Overlapping LNs and P-notes</span></h3>
+<p>P-notes have been observed to exhibit unusual behavior around LNs. Sometimes, a LN that starts before the p-note head and ends after the p-note head will cause the p-note to unexpectedly become a bomb. The LN and p-note do not have to be on the same lane. This phenomenon is poorly understood and requires further investigation.
+</p><p>A p-note can have unexpected behavior if it is <a href="#Corruption_Zone">corrupted</a> by another p-note.
+</p>
+<h3><span class="mw-headline" id="Position_of_Other_Objects">Position of Other Objects</span></h3>
+<p>If all of the other criteria are inconclusive, then the behavior of a p-note is determined by <a href="#Worm_Theory">worm theory</a>. Loosely speaking, worm theory is an algorithm that decides whether the p-note is fake or bomb based on the relative positions of all the other objects in the map. Note that this only applies to long p-notes, since short p-notes are bombs by default. See the section on worm theory for more information.
+</p>
+<h2><span class="mw-headline" id="Unloading_Threshold">Unloading Threshold</span></h2>
+<p>When an object crosses the judgement bar, it continues scrolling past the bottom of the screen for some time, then gets unloaded. The <b>unloading threshold</b> is, roughly, the amount of time between a note crossing the judgement bar and that note being unloaded. 
+</p><p>Note that "unloading" in this context may not necessary correlate with the internal mechanics of osu, such as a sprite being unrendered or memory being freed up. We don't know much about why this threshold exists, or what it means internally. For now, we denote it as "unloading" for convenience.
+</p><p>This threshold is not a unique quality of p-notes, but it allows us to answer important questions about p-notes, such as:
+</p>
+<ul><li>When does the p-note end unload? (Determines the size of the <a href="#Corruption_Zone">corruption zone</a>)</li>
+<li>Does the p-note end unload before the p-note head reaches the judgement bar? (Relevant to the <a href="#Length">length</a> criteria for p-note type)</li>
+<li>How many objects have unloaded by the time the p-note head reaches the judgement bar? (Used in <a href="#worm_theory">worm theory</a>)</li></ul>
+<p>While initially researching this topic, the experimental values in the first situation were offset from the observed values for the other situations by about +20 ms. It's not certain whether this is a simple offset by a constant, or whether there are more complex variables at play. Until more research is done, we are treating data from the second and third situations as the "canonical" unloading threshold.
+</p>
+<h3><span class="mw-headline" id="Equation">Equation</span></h3>
+<p>The threshold is dependent on at least three variables:
+</p>
+<ul><li>The map's Overall Difficulty (OD)</li>
+<li>The player's initial scroll speed (SS)</li>
+<li>The skin's HitPosition (HitPos)</li></ul>
+<p>Note that HitPosition is the vertical location of the judgement bar, and initial scroll speed is the scroll speed at the moment the map is loaded. Changing the scroll speed after loading the map does not affect the unloading threshold.
+</p><p>Finally, here is the equation for the threshold itself.
+</p>
+<div class="center"><div class="floatnone"><img alt="Unloading threshold equation" src="images/Unloading_threshold_equation.png" decoding="async" width="600" height="114" /></div></div>
+<h3><span class="mw-headline" id="Variability">Variability</span></h3>
+<p>The unloading threshold is not completely consistent; the time that an object unloads can vary by a few milliseconds between playthroughs. So, when calculating the unloading threshold in your projects, you should give about ~5 ms of leeway in both directions.
+</p><p>The threshold is believed to be less consistent on lower framerates or frame limiting modes, and more consistent on higher framerates or frame limiting modes. This could be because objects are unloaded less regularly on lower framerates. This topic has not been investigated thoroughly.
+</p>
+<h2><span class="mw-headline" id="Worm_Theory">Worm Theory</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><img alt="" src="images/Anatomy_of_a_p-note.png" decoding="async" width="300" height="295" class="thumbimage" />  <div class="thumbcaption"><div class="magnify"></div>A diagram of some terms used in worm theory, as well as the <a href="#Corruption_Zone">corruption zone</a>.</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><img alt="" src="images/Wba_example.png" decoding="async" width="300" height="319" class="thumbimage" />  <div class="thumbcaption"><div class="magnify"></div>An example of a p-note with w = 1, B = 5, and A = 2. According to worm theory, this p-note is a bomb.</div></div></div>
+<p><b>Worm theory</b> is the final criteria for determining the type of a long p-note, as described in <a href="#Factors_That_Influence_P-note_Type">Factors That Influence P-note Type</a>. Worm theory is an algorithm that uses these three variables to decide if a long p-note is a fake or a bomb:
+</p>
+<ul><li>w: The total number of objects in the p-note's buffer zone, excluding fake p-note heads and any objects in the buffer zone of a previous fake p-note</li>
+<li>B: The total number of objects before the p-note head</li>
+<li>A: The total number of objects after the p-note head</li></ul>
+<p>For each of these calculations, only single notes, LN heads, and p-note heads are counted as "objects." If the object is at the same timestamp as the p-note head, then whether it's included in B or A depends on whether it comes before or after the p-note in the .osu file, respectively. P-notes are not included in their own calculations.
+</p><p>It is worth stressing that not every object in the buffer zone counts toward w. If the object is a fake p-note head, or if the object is also in the buffer zone of an earlier fake p-note, it does not count toward w.
+</p>
+<h3><span class="mw-headline" id="Buffer_Zone">Buffer Zone</span></h3>
+<p>The <b>buffer zone</b> is the section of the map immediately before the p-note head, with a length equal to the <a href="#Unloading_Threshold">unloading threshold</a>. When the p-note head reaches the judgement bar, objects in the buffer zone will have already crossed the judgement bar, but not unloaded yet. 
+</p><p>Due to random variation in unloading time, placing notes very close to the the start of the buffer zone may cause the value of w to vary from playthrough to playthrough.
+</p>
+<h3><span class="mw-headline" id="Diagram">Diagram</span></h3>
+<p>This diagram can be used as a practical reference for p-note behavior, if the p-note is long and the other criteria for p-note type are inconclusive. Unfortunately, worm theory is not fully understood on a theoretical level, so only the limited range of values that has been empirically tested is presented here. However, it is known that the p-note is always fake if w = 0, and higher values of w are more likely to produce bombs than fakes.
+</p>
+<div class="center"><div class="floatnone"><img alt="Worm theory graphs" src="images/Worm_graphs.png" decoding="async" width="900" height="387" /></div></div>
+<p>Note that some cells are grayed out because it's impossible for B to be less than w.
+</p><p>The "worms" in this graph are the reason why we call it worm theory!
+</p>
+<h3><span class="mw-headline" id="Algorithm">Algorithm</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:252px;"><img alt="" src="images/Worm_algorithm_diagram.png" decoding="async" width="250" height="575" class="thumbimage" />  <div class="thumbcaption"><div class="magnify"></div>A visual representation of the worm algorithm for w = 1. Starting with the top row of charts: If the left chart has an "f" on it, the p-note is a fake. Else, if the right chart has a "b" on it, the p-note is a bomb. Else, go to the next row and try again.</div></div></div>
+<p>The algorithm for worm theory is not fully understood yet, and parts of it are likely incorrect. However, here is the most up-to-date hypothesis.
+</p><p>Worms can be sorted by <b>generation</b>, represented by the variable n. There are an infinite number of generations, starting from generation 0 and increasing from there. Each generation has 2^n worms in it.
+</p><p>Each worm is defined by a <b>worm equation</b>, a relation between A and B that also depends on n. The precise formula is unknown, but below is an approximation that is accurate for small values of A and B:
+</p>
+<div class="center"><div class="floatnone"><img alt="Worm equations" src="images/Worm_equation.png" decoding="async" width="450" height="202" /></div></div>
+<p>Note that when n = 0, both formulas above are identical.
+</p><p>In addition to the worm equation, each worm also has a <b>bomb zone inequality</b>, which is dependent on w as well as A and B.
+</p>
+<div class="center"><div class="floatnone"><img alt="Worm bomb zone equations" src="images/Worm_bomb_zone_equations.png" decoding="async" width="550" height="228" /></div></div>
+<p>On the graph of A vs. B, the bomb zone is an area surrounding each worm within an approximate radius of w. Roughly speaking, bomb zones are where bombs are found.
+</p><p>Finally, here is the algorithm that determines if a long p-note is a fake or a bomb.
+</p>
+<ol><li>Let n = 0</li>
+<li>Repeat the following:
+<ol><li>If the worm equation of any worm in generation n is fulfilled, the p-note is a fake</li>
+<li>Else, if the bomb zone inequality of any worm in generation n is fulfilled, the p-note is a bomb</li>
+<li>Else, increment n by 1 and repeat</li></ol></li></ol>
+<h3><span class="mw-headline" id="Ongoing_Research">Ongoing Research</span></h3>
+<p>The reason why the equations given above are only approximations is because of the "wiggly worm" phenomenon. For small values of A and B, the worms seem to follow a linear path. However, at higher values, the worms start to diverge slightly. The overall direction of the worms is still linear, but they do not follow the line as closely as possible. That is, the worms are wiggly. This needs further investigation.
+</p><p>The bomb zone concept is the latest attempt to explain the "worm social distancing" phenomenon, or the fact that no worms visibly touch each other in the graph of A vs. B. Furthermore, the amount of distance between the worms is proportional to w. According to the bomb zone hypothesis, this is because parts of higher-generation worms are hidden beneath the bomb zones of lower-generation worms. However, this hypothesis, and worm behavior for higher values of w, hasn't been investigated thoroughly. It has also been suggested that the graphs for w = 1, w = 2, and w = 3 look like they are "zooming in" on the same graph. 
+</p><p>Graphing A vs. T and B vs. T yield somewhat more normal looking graphs, but they are not as practical to use as the graph of A vs B.
+</p>
+<h2><span class="mw-headline" id="Corruption_Zone">Corruption Zone</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><img alt="" src="images/Anatomy_of_a_p-note.png" decoding="async" width="300" height="295" class="thumbimage" />  <div class="thumbcaption"><div class="magnify"></div>A diagram of the corruption zone, along with some terms from <a href="#Worm_Theory">worm theory</a>.</div></div></div>
+<p>Fake p-notes create a <b>corruption zone</b> which prevents the player from interacting with notes on any lane, whether by hitting them or missing them. It's not known for sure if all fake p-notes exhibit this behavior, or only some of them.
+</p><p>The corruption zone starts APPROXIMATELY at the time the p-note tail unloads, and ends at the time the p-note head crosses the judgement line. In other words, there is a section of the map called the <b>corruption buffer</b> (not to be confused with the <a href="#Buffer_Zone">buffer zone</a>) that starts immediately after the p-note tail, and has a size APPROXIMATELY equal to the <a href="#Unloading_Threshold">unloading threshold</a>. Then, the corruption zone is the section of the map between the end of the corruption buffer and the p-note head.
+</p><p>(As mentioned in the section on the unloading threshold, the size of the corruption buffer is actually slightly different from the unloading threshold, but the specific relationship is unknown.)
+</p><p>The presence of long notes in the map, particularly ones that are very long, has been observed to affect the size of the corruption zone. This has not been investigated yet, but it suggests our current understanding of the corruption zone, or the unloading threshold, is incomplete.
+</p>
+<h3><span class="mw-headline" id="Corrupted_Notes">Corrupted Notes</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><img alt="" src="images/Corruption_zone.png" decoding="async" width="300" height="256" class="thumbimage" />  <div class="thumbcaption"><div class="magnify"></div>A corrupted note's behavior is determined by how much of the judgement window overlaps with the corruption zone. Here, A is a normal note, B is a j-note, and C is a fake.</div></div></div>
+<p>A note that falls in or near the corruption zone can become a corrupted note. There are two types of corrupted notes: fakes and j-notes (notes that can be hit but not late-missed).
+</p><p>This is how the behavior of a corrupted note is determined:
+</p>
+<ol><li>If the note is after the p-note head, it will be a normal, non-corrupted note</li>
+<li>If the note is before the p-note head...
+<ol><li>...and the start of its judgement window is AFTER the start of the corruption zone, it will be a fake</li>
+<li>...and the start of its judgement window is BEFORE the start of the corruption zone, but the end of its judgement window is AFTER the start of the corruption zone, it will be a j-note</li>
+<li>...and the end of its judgement window is BEFORE the start of the corruption zone, it will be a normal, non-corrupted note</li></ol></li></ol>
+<p>J-notes have slightly variable behavior, depending on how much of its judgement window overlaps with the corruption zone. Specifically, the player can hit j-notes up until the start of the corruption zone; then they will be unable to interact with the j-note, whether by hitting or missing. 
+</p><p>Here are a few examples. 
+</p>
+<ul><li>If only the very end of a j-note's judgement window overlaps with the corruption zone, it will be possible to get every judgement on it except late-miss.</li>
+<li>If only the second half of the j-note's judgement window overlaps with the corruption zone, it will be possible to get any early judgement, but impossible to get any late judgement, including late-miss.</li>
+<li>If the j-note's judgement window almost completely overlaps with the corruption zone, it will be possible to get an early-miss, but impossible to get any other judgement, including late-miss.</li></ul>
+<p>Note that it is not possible to create a "reverse j-note" by putting a note near the end of the corruption zone; it will just be a fake. Also, due to random variation in unloading time, notes at the very boundary of the corruption zone can can exhibit different behavior from playthrough to playthrough.
+</p></body></html>

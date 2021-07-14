@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="style.css">
+<title>Basic SV Manipulation - osu!mania Research Lab</title>
+</head>
+
+<body>
+<p><a href="index.html">Back</a></p>
+<h1 id="firstHeading" class="firstHeading">Basic SV Manipulation</h1><div id="bodyContentOuter">
+
+<p>Say you have a section S, and that you have parts of it S1 and S2 that add up to the section S. You want to stretch S1 and S2 by an SV value each so that you have <i>r</i> times the distance they would've originally had.
+</p><p>If <i>p</i> is the percentage of S1 in S expressed from 0 to 1, then the following expression is true:
+</p><p><code> SV1 * p + SV2 * (1 - p) = r </code>
+</p><p>You can use this to determine the length <i>p</i>, SV1 or SV2, or even the effective rate <i>r</i>. <br />
+A demonstration of having two SVs while having the same effective rate of 1.00x can be found at: <a rel="nofollow" class="external free" href="https://www.khanacademy.org/cs/a/5530319917301760">https://www.khanacademy.org/cs/a/5530319917301760</a>
+</p>
+<h2><span class="mw-headline" id="Proof">Proof</span></h2>
+<p>You can add these distances like so:
+</p><p><code> S1 * SV1 + S2 * SV2 = r * S </code>
+</p><p>If you divide all by S, you'll see that you can express this in terms of parts of a section instead of any particular spatial unit:
+</p><p><code> S1 / S * SV1 + S2 / S * SV2 = r</code>  (1)
+</p><p>If you want to think about it in terms of percentages, consider:
+</p><p><code> p = S1 / S</code>  (2)
+</p><p>and
+</p><p><code> S1 + S2 = S </code>
+</p><p>Then
+</p><p><code> S1 / S + S2 / S = 1 </code>
+</p><p>Therefore, considering the sum of the sections,
+</p><p><code> S2 / S = 1 - S1 / S </code>
+</p><p>Replacing (2) here yields:
+</p><p><code> S2 / S = 1 - p </code> (3)
+</p><p>Replacing (2) and (3) into (1) yields
+</p><p><code> SV1 * p + SV2 * (1 - p) = r </code>.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="More_abstract_ways_to_think_about_it">More abstract ways to think about it</span></h2>
+<p>For all intents and purposes, SVs are a way to stretch out space and time. From the <a href="Distance_Measuring.html" title="Distance Measuring">Distance Measuring</a> equations, it is fair to have
+</p><p><code> BPM * SV * time = distanceWithSV </code>
+</p><p>If you divide this by the BPM, you'll get a "distance" that will actually be a stretched time:
+</p><p><code> SV * time = StretchedTime </code>
+</p><p>If you have two SV values that last a certain time, it is fair to say that adding them up will yield a new distance:
+</p><p><code> SV1 * Time1 + SV2 * Time2 = TotalStretchedTime </code>
+</p><p>If you divide by this stretched time, you'll have a unitless way to understand this equation.
+</p><p><code> SV1 * p + SV2 * (1 - p) = 1 </code>
+</p><p>If you multiply this back by BPM, in a way, you'll have a BPM-unitless-time equation. If you multiply by total time in milliseconds, you'll have a BPM-ms equation.
+</p><p>This works the same for spatial ways of thinking about it:
+</p><p><code> SV1 * Displacement1 + SV2 * Displacement2 = TotalDisplacement </code>
+</p><p>Pretend that you want this total displacement to be <i>r</i> (a scaling of this total displacement) and that you want the sum of these modified displacements (SV1 * Displacement1 and SV2 * Displacement2) to be equal to <i>r</i>. Then you still end up with the same equation.
+</p><p><code> SV1 * q + SV2 * (1 - q) = r </code>
+</p><p>That means that for either a time interval <i>p</i> or a distance interval <i>q</i> you can add them up and manipulate them so that it is <i>r</i> times the original distance that would have occurred in a timespan.
+</p></body>
+</html>

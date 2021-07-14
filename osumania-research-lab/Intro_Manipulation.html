@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="style.css">
+<title>Intro Manipulation - osu!mania Research Lab</title>
+</head>
+
+<body>
+<p><a href="index.html">Back</a></p>
+<h1 id="firstHeading" class="firstHeading">Intro Manipulation</h1>
+
+<p>Everything that has to do with the time between the start of the map and the first object!
+</p>
+<h2><span class="mw-headline" id="Skip_Threshold">Skip Threshold</span></h2>
+<p>If the first object in a map comes after the <b>skip threshold,</b> (<i>that is, if the intro is long enough</i>) osu! will provide a skip button. Surprisingly, the skip threshold is not constant, and is affected by both the BPM and the length of the longest LN in the map.
+</p><p>The skip threshold is determined using the following process:
+</p>
+<ul><li>If the BPM is 120 or less, the skip threshold is set to 4 beats after 0:03.314.</li>
+<li>If the BPM is greater than 120, the skip threshold is set to 8 beats after 0:03.314.</li>
+<li>If the map has an LN that is longer than 1.914 seconds, the skip threshold is increased by (length of longest LN in map) - 1914 ms.</li></ul>
+<p>It was recently discovered that scroll speed affects the skip threshold. Playing <a rel="nofollow" class="external free" href="https://osu.ppy.sh/beatmapsets/1140249#mania/2381679">https://osu.ppy.sh/beatmapsets/1140249#mania/2381679</a> with BPM scale off and scroll speed 1 causes the skip button to not appear. The skip button appears in all other scenarios. Further investigation needed!
+</p>
+<h2><span class="mw-headline" id="Skip_Buffer">Skip Buffer</span></h2>
+<p>The <b>skip buffer</b> is the amount of time between the player hitting the skip button and the first object reaching the judgement bar. This value is 2 measures (8 beats in 4/4) equivalent of the very first BPM TimingPoint in the map. SV TimingPoints do not affect the skip buffer.
+</p><p>However, the speed the first note(s) approach based on the last SV and BPM value right before the first note. This approach speed is fixed and changing the SV during the skip buffer will not result in any noticeable changes.
+</p></body>
+</html>

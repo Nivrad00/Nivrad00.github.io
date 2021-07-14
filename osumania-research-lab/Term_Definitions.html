@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="style.css">
+<title>Reference Bpm Manipulation - osu!mania Research Lab</title>
+</head>
+
+<body>
+<p><a href="index.html">Back</a></p>
+<h1 id="firstHeading" class="firstHeading">Term Definitions</h1>
+<p>Listed below are all the terms used across the wiki and their definition in alphabetical order.
+</p>
+<div id="toc" class="toc"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2>Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Beatspace"><span class="tocnumber">1</span> <span class="toctext">Beatspace</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#HitObject_Layout"><span class="tocnumber">2</span> <span class="toctext">HitObject Layout</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Note_Stagger"><span class="tocnumber">3</span> <span class="toctext">Note Stagger</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Screen_Height"><span class="tocnumber">4</span> <span class="toctext">Screen Height</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Teleport_BPM"><span class="tocnumber">5</span> <span class="toctext">Teleport BPM</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Teleport_Reset"><span class="tocnumber">6</span> <span class="toctext">Teleport Reset</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Total_Scroll-Speed_Independant_Distance"><span class="tocnumber">7</span> <span class="toctext">Total Scroll-Speed Independant Distance</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Beatspace">Beatspace</span></h2>
+<p>Beatspace is a term osu! used for the time one beat lasts at a given BPM in milliseconds. It is also called <b>Beat Interval</b> and <b>Beat Length</b>. Another, less branded name for it is <b>Milliseconds per beat</b> (ms/beat, often abbreviated <b>mspb</b>).
+It is calculated like so:
+</p><p><code>Beatspace = 60000 / BPM</code>
+</p><p>You can convert back using the same formula:
+</p><p><code>BPM = 60000 / Beatspace</code>
+</p>
+<h2><span class="mw-headline" id="HitObject_Layout">HitObject Layout</span></h2>
+<p>Hitobjects in the .osu file follow the following format:
+</p><p><code>x axis, y axis, start time, note type, hitsound, (end time (if applicable)):sampleset:additions:customset:volume</code>
+</p>
+<h2><span class="mw-headline" id="Note_Stagger">Note Stagger</span></h2>
+<p>SV effect wherein the notes are as far apart as when normally scrolling, however the notes teleport to the receptor after the previous notes are hit instead of a gradual scroll.
+</p>
+<h2><span class="mw-headline" id="Screen_Height">Screen Height</span></h2>
+<p>Value from receptors to the other side of the screen. Usually represented by a percentage.
+</p>
+<h2><span class="mw-headline" id="Teleport_BPM">Teleport BPM</span></h2>
+<p>The BPM required to move a note from anywhere on the playing field to the receptors, placed 1ms before the note. Calculated by:
+</p><p><code>Total Scroll-Speed Independent Distance / (1/Screen Height Percentage)</code>
+</p><p>See <a href="Distance_Measuring.html" title="Distance Measuring">Distance Measuring</a> for more information.
+</p>
+<h2><span class="mw-headline" id="Teleport_Reset">Teleport Reset</span></h2>
+<p>A 1ms red line that is near infinite in BPM.
+</p>
+<h2><span class="mw-headline" id="Total_Scroll-Speed_Independant_Distance">Total Scroll-Speed Independant Distance</span></h2>
+<p>The BPM needed to teleport a note from one side of the screen to another in just 1ms. Calculated by:
+</p><p><code>MS for a note to travel from one side of the screen to another * BPM</code>
+</p></body>
+</html>

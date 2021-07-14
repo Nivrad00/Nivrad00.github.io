@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="style.css">
+<title>Reference Bpm Manipulation - osu!mania Research Lab</title>
+</head>
+
+<body>
+<p><a href="index.html">Back</a></p>
+<h1 id="firstHeading" class="firstHeading">Reference Bpm Manipulation</h1>
+
+<h2>Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary"><span class="tocnumber">1</span> <span class="toctext">Summary</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Zero_Offset_Reference_Bpm_Line_.28Z-Line.29"><span class="tocnumber">1.1</span> <span class="toctext">Zero Offset Reference Bpm Line (Z-Line)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Caveats"><span class="tocnumber">2</span> <span class="toctext">Caveats</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Details"><span class="tocnumber">3</span> <span class="toctext">Details</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Summary">Summary</span></h2>
+<p>For example, if you have a map that looks like below
+</p>
+<pre> ...
+ //Storyboard Layer 4 (Overlay)
+ //Storyboard Sound Samples
+
+ [TimingPoints]
+ -23,240,4,2,0,50,1,0
+ 6697,240,4,2,0,50,1,0
+ 15817,240,4,2,0,50,1,0
+ 17737,-166.666666666667,4,2,0,50,0,0
+ 18457,240,4,2,0,25,1,0
+
+ ...
+
+ 174702,240,4,2,0,50,1,0
+ 202782,240,4,2,0,50,1,0
+ 240222,428.571428571429,4,2,0,50,1,0
+ 281364,480,4,2,0,50,1,0
+ 329364,240,4,2,0,50,1,0
+
+ [HitObjects]
+ 448,192,17737,5,0,0:0:0:0:
+
+ ...
+</pre>
+<p>You found out that the map is on <b>reference BPM 200</b>, you would like to change it to <b>100</b>.
+</p>
+<h3><span id="Zero_Offset_Reference_Bpm_Line_(Z-Line)"></span><span class="mw-headline" id="Zero_Offset_Reference_Bpm_Line_.28Z-Line.29">Zero Offset Reference Bpm Line (Z-Line)</span></h3>
+<p><i>(Had the idea of calling it Z-Line because it should be at the end and also it's zero offset.)</i>
+</p><p>Simply add a line of offset 0 <i>(Note: 600 because 60,000/100 = 600)</i>
+</p>
+<pre>0,600,4,2,0,50,1,0
+</pre>
+<p>at the end, so:
+</p>
+<pre> ...
+ 174702,240,4,2,0,50,1,0
+ 202782,240,4,2,0,50,1,0
+ 240222,428.571428571429,4,2,0,50,1,0
+ 281364,480,4,2,0,50,1,0
+ 329364,240,4,2,0,50,1,0
+ 0,600,4,2,0,50,1,0 &lt; --- HERE
+
+ [HitObjects]
+ 448,192,17737,5,0,0:0:0:0:
+
+ ...
+</pre>
+<p>You would notice that the reference would change. This works for any bpm, not for all offsets though.
+</p><p>You may need to move the offset to the negatives in some rare occasions.
+</p>
+<h2><span class="mw-headline" id="Caveats">Caveats</span></h2>
+<p>This works because osu!'s algorithm assumes a <b>sorted</b> TimingPoint .osu file.
+</p>
+<ul><li>Saving the map will move the Z-Line back to the start, take note of that.</li>
+<li>This manipulation doesn't seem to be compatible with <b>NaN</b> Fake Note Generation during osu! upload. (Require verification)</li>
+<li>During upload, osu will attempt shift Z-Line during package creation. Spam saving the original .osu file may be required to retain its position. (To find out if there's a more consistent way to upload these files).</li></ul>
+<h2><span class="mw-headline" id="Details">Details</span></h2>
+<p>I wrote a small article speculating on why it works.
+</p><p><a rel="nofollow" class="external text" href="https://eve-ning.github.io/vsrg/2020/07/23/osu-reference-bpm.html">osu! reference BPM</a>
+</p></body>
+</html>

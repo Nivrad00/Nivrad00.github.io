@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="style.css">
+<title>Distance Measuring - osu!mania Research Lab</title>
+</head>
+
+<body>
+<p><a href="index.html">Back</a></p>
+<h1 id="firstHeading" class="firstHeading">Distance Measuring</h1>
+
+<p>There's no known pixel-based methods to measure distances, and if there were, they would depend on scroll speed. For this reason, the BPM-ms technique is used to measure distances that do not depend on scroll speed or pixels. To do so, one must have a base BPM to calculate the distance.
+</p><p><code> BPM * time = distance </code>
+</p><p>The unit of time, if you're working with distances by adding them or doing any equation with them, must be the same, but you can use any time unit.
+</p><p>Usual uses include for instance determining the BPM of teleports:
+</p><p><code> TeleportBPM * TeleportTime = BaseBPM * BaseTime </code>
+</p><p>It likewise works for SVs, given that you interpret SVs as a speed multiplier of a base BPM. In other words
+</p><p><code> BPM1 / BaseBPM * time1 = BPM2 / BaseBPM * time2 </code> 
+</p><p>is equivalent to 
+</p><p><code> SV1 * time1 = SV2 * time2 </code>
+</p><p>This method of measuring distance is called <b>Scroll-Speed Independant Distance</b>. 
+</p><p>To use this equation with a BPM and an SV effect, it suffices to multiply the resulting BPM-ms distance by the SV value:
+</p><p><code> BPM * SV * time = distanceWithSv </code>
+</p>
+<h2><span class="mw-headline" id="Reasoning">Reasoning</span></h2>
+<p>A way to prove this is by supposing that you have a distance equation that has a constant <i>a</i> that converts a number of beats to pixels on the screen. <i>a</i> may be defined in terms of the scroll speed, skin, and any other number of factors.
+</p><p>Since 
+</p><p><code>bpm * time = beats</code> 
+</p><p>if time is in minutes, multiplying by <i>a</i> will give you a pixel distance:
+</p><p><code> a * bpm * time = distance </code>
+</p><p>If you make this distance equal to any other distance, the <i>a</i> will cancel out, thus, our very first equation is a valid way of measuring distance in a map.
+</p></body>
+</html>

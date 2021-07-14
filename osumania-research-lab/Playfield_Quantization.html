@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="style.css">
+<title>Playfield Quantization - osu!mania Research Lab</title>
+</head>
+
+<body>
+<p><a href="index.html">Back</a></p>
+<h1 id="firstHeading" class="firstHeading">Playfield Quantization</h1>
+
+<p>At any given time, the osu!mania playfield is divided into equally-sized "segments" such that measure lines and hit objects can only be rendered at the boundary between segments. Additionally, since every segment is of equal size, the judgement bar and the top of the screen also represent a boundary between segments. This phenomenon is called <b>playfield quantization</b>.
+</p><p>The number of segments on screen decreases as the speed of the map increases. (Earlier, it was believed that each segment represents a single millisecond, but the actual situation is probably more complex.) Usually, the number of segments is high enough that objects appear to scroll continuously. However, at high speeds, the number of segments on screen can get very small, all the way down to 1. For example, playfield quantization sometimes causes measure lines to appear at the very top of the screen during teleport effects. This happens because during a sufficiently fast teleport, there is only one segment visible at a time, so measure lines can only be rendered at the top.
+</p><p><b>Note:</b> <i>Playfield quantization's effects are dependent on the player skin's Hit Position as well as the player's Scroll Speed.</i>
+</p>
+<h2><span class="mw-headline" id="Ghost_Lines">Ghost Lines</span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><img alt="" src="images/Ghost-lines-1.jpg" decoding="async" width="300" height="169" class="thumbimage" />  <div class="thumbcaption"><div class="magnify"></div>Ghost lines dividing the playfield into 4 and 5 equal parts.</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><img alt="" src="images/Ghost-lines-2.jpg" decoding="async" width="300" height="169" class="thumbimage" />  <div class="thumbcaption"><div class="magnify"></div>Ghost lines dividing the playfield into 23 equal parts.</div></div></div>
+<p>Playfield quantization can lead to an interesting visual effect called <b>ghost lines</b>. Ghost lines look like flickering or static measure lines that divide the playfield into equal segments. Two layers of ghost lines can be visible at once: say, one layer dividing the screen into 4 equal segments, and another layer dividing the screen into 5. 
+</p><p>Ghost lines appear when a high speed is combined with a high measure line density, which can be achieved through a high BPM (say, 600000 BPM), 1/4 time signature, and 0.1x SV. You can also change the appearance of the effect in real time by changing your scroll speed.
+</p><p>This effect happens because there are a small number of segments on screen at once, and since measure lines can only be rendered at the boundaries between segments, the lines are rendered in a uniform pattern. If the measure line density is high enough, there will be more than 1 measure line per segment, causing measure lines to be rendered at every possible location. If the measure line density is somewhat less than 1 per segment, the lines will flicker. 
+</p><p>Two layers of ghost notes appear when the number of segments that <i>should</i> be on screen is not an integer. For example, suppose setting the speed to X BPM causes 4 segments to appear, and setting the speed to Y BPM causes 5 segments to appear. If you instead set the speed to somewhere between X and Y, then the game will render both 4 segments and 5 segments at the same time. This can be thought of as alternating between 4 and 5 so fast that both show up on the same frame. Also, this is why the two ghost note layers will always have adjacent numbers of divisions.
+</p>
+</body>
+</html>
