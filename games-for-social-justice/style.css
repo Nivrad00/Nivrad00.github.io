@@ -86,18 +86,16 @@ a {
 .section-content {
     float: right;
 }
-.summary {
-    font-size: 19px;
+.details {
+    font-size: 18px;
     font-family: "Poppins";
-    margin-top: -12px;
+    margin-top: -15px;
     color: #888;
-}
-.link {
-    margin-top: -12px;
 }
 .citation {
     border-top: 1px solid #111;
     padding-top: 15px;
+    margin-top: 20px;
 }
 
 #footer {
