@@ -1,0 +1,108 @@
+html {
+    margin: 10px 40px;
+    background-color: #fff;
+}
+body {
+    max-width: 1000px;
+    margin: auto;
+    color: #111;
+    line-height: 1.4;
+}
+h1 {
+    font-weight: normal;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Poppins';
+    color: gray;
+}
+h2 {
+    
+    font-family: 'Poppins';
+}
+#header-emphasis {
+    font-weight: bold;
+    color: darkgreen;
+}
+a {
+    color: darkgreen;
+}
+#container {
+    display: flex;
+    gap: 20px;
+}
+
+#nav {
+    width: 230px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.nav-link {
+    border: 1px solid gray;
+    padding: 6px 15px;
+    display: block;
+    text-decoration: none;
+    color: #111;
+}
+.nav-active {
+    background-color: darkgreen;
+    border: 1px solid darkgreen;
+    color: white;
+}
+
+#content {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.section {
+    border: 1px solid gray;
+    padding: 7px 33px 12px 33px;
+    display: flex;
+}
+.section-header {
+    background-color: #111;
+    color:white;
+    border: 1px solid #111;
+    padding: 0px 33px 0px 33px;
+}
+.section-header > h2 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-weight: normal;
+}
+.section-image {
+    width: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.section-image > img {
+    width: 100%;
+}
+.section-content {
+    float: right;
+}
+.summary {
+    font-size: 19px;
+    font-family: "Poppins";
+    margin-top: -12px;
+    color: #888;
+}
+.link {
+    margin-top: -12px;
+}
+.citation {
+    border-top: 1px solid #111;
+    padding-top: 15px;
+}
+
+#footer {
+    margin: 20px 0;
+    text-align: right;
+    color: gray;
+    font-size: 12px;
+}

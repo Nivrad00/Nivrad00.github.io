@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <head>
+        <title>Games for Social Justice</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="header">
+            <h1>LibGuide: <span id="header-emphasis">Games for Social Justice</span></h1>
+        </div>
+
+        <div id="container">
+            <div id="nav">
+                <a class="nav-link nav-active" data-page="0" href='?'>Introduction</a>
+                <a class="nav-link" data-page="1" href='#'>General</a>
+                <a class="nav-link" data-page="2" href='#'>Race and culture</a>
+                <a class="nav-link" data-page="3" href='#'>Immigration, poverty, and war</a>
+                <a class="nav-link" data-page="4" href='#'>Disability and mental health</a>
+                <a class="nav-link" data-page="5" href='#'>Gender and LGBTQ+ identities</a>
+            </div>
+            
+            <div id="content"></div>
+        </div>
+
+        <div id="footer">
+            Darvin Heo - University of North Carolina - INLS 501 - Fall 2021<br>
+            Last updated Nov. 8, 2021
+        </div>
+    </body>
+    <script>
+        let loadPage = page => $('#content').load(page + ".html");
+
+        $('document').ready(() => {
+            loadPage(0);
+        })
+
+        $('.nav-link').on('click', el => {
+            let target = $(el.target);
+            loadPage(target.data('page'))
+            $('.nav-active').removeClass('nav-active');
+            target.addClass('nav-active');
+            return false;
+        });
+    </script>
+</html>
