@@ -14,12 +14,12 @@
 
         <div id="container">
             <div id="nav">
-                <a class="nav-link nav-active" data-page="0" href='?'>Introduction</a>
-                <a class="nav-link" data-page="1" href='#'>Overview</a>
-                <a class="nav-link" data-page="2" href='#'>Race and culture</a>
-                <a class="nav-link" data-page="3" href='#'>Poverty, immigration, and war</a>
-                <a class="nav-link" data-page="4" href='#'>Disability and mental health</a>
-                <a class="nav-link" data-page="5" href='#'>LGBTQ+ identities</a>
+                <a class="nav-link" data-page="0" href='#intro'>Introduction</a>
+                <a class="nav-link" data-page="1" href='#overview'>Overview</a>
+                <a class="nav-link" data-page="2" href='#race-and-culture'>Race and culture</a>
+                <a class="nav-link" data-page="3" href='#poverty-immigration-and-war'>Poverty, immigration, and war</a>
+                <a class="nav-link" data-page="4" href='#disability-and-mental-health'>Disability and mental health</a>
+                <a class="nav-link" data-page="5" href='#lgbtq-identities'>LGBTQ+ identities</a>
             </div>
             
             <div id="content"></div>
@@ -34,15 +34,22 @@
         let loadPage = page => $('#content').load(page + ".html");
 
         $('document').ready(() => {
-            loadPage(0);
+            let anchor = window.location.hash.substr(1);
+            let target = $(`a[href="#${anchor}"]`);
+            if (target.length > 0) {
+                target.addClass('nav-active');
+                loadPage(target.data('page'));
+            } else {
+                $('a[data-page="0"]').addClass('nav-active');
+                loadPage(0);
+            }
         })
 
         $('.nav-link').on('click', el => {
             let target = $(el.target);
-            loadPage(target.data('page'))
+            loadPage(target.data('page'));
             $('.nav-active').removeClass('nav-active');
             target.addClass('nav-active');
-            return false;
         });
     </script>
 </html>
