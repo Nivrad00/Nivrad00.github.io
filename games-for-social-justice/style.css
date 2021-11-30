@@ -107,4 +107,7 @@ a {
     text-align: right;
     color: gray;
     font-size: 12px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
