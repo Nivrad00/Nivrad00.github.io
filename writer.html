@@ -3,12 +3,31 @@
     <title>The Actually Most Dangerous Writing App</title>
 
     <style>
-    html {
+    body {
         background-color: #f6f6f6;
         height: 100%;
         margin: 0;
-        font-family: Verdana, Geneva, sans-serif;
     }
+	.verdana #text {
+        font-family: Verdana, sans-serif;
+	}
+	.georgia #text {
+        font-family: Georgia, serif;
+	}
+	.courier-new #text {
+        font-family: "Courier New", monospace;
+	}
+	
+	body.dark {
+        background-color: #111;
+		color: white;
+	}
+	#hardcore-label.disabled {
+		color: #999;
+	}
+	.dark #hardcore-label.disabled {
+		color: #666;
+	}
     #main {
         position: absolute;
         max-width: 800px;
@@ -22,6 +41,9 @@
         width: 100%;
         background-color: #eee;
     }
+	.dark #progress {
+		background-color: #333;
+	}
     #bar {
         width: 0;
         height: 10px;
@@ -41,8 +63,21 @@
         font-family: Verdana, Geneva, sans-serif;
         scroll-padding: 30px;
     }
+	.dark #text {
+		background-color: #222;
+		color: white;
+	}
+	#text.disabled {
+		color: #999;
+	}
+	.dark #text.disabled {
+		color: #666;
+	}
     #text::placeholder {
         color: #999;
+    }
+	.dark #text::placeholder {
+        color: #666;
     }
     #sidebar {
         position: absolute;
@@ -51,7 +86,7 @@
     }
     @media (max-width: 1200px) {
         #main {
-            top: 50px;
+            top: 80px;
         }
         #sidebar {
             max-width: 800px;
@@ -75,13 +110,13 @@
         state = "writing"
         $("#text").attr("placeholder", "");
         $("#hardcore").attr("disabled", true);
-        $("#hardcore-label").css("color", "#999");
+        $("#hardcore-label").addClass("disabled")
     }
 
     function endGame(save = false) {
         clearInterval(id);
         $("#text").attr("readonly", true);
-        $("#text").css("color", "#999");
+        $("#text").addClass("disabled");
         state = "finished";
         if (!save && $("#hardcore").is(':checked'))
             $("#text").val("");
@@ -110,6 +145,20 @@
                 $("#text").attr("placeholder", "Start writing. The text box will be disabled if you stop for too long.");
         });
 
+		$("#dark").change(function() {
+            if (this.checked)
+				$(document.body).addClass("dark");
+			else
+				$(document.body).removeClass("dark");
+		});
+
+		$("#font").change(function() {
+			for (let font of ["verdana", "georgia", "courier-new"])
+				$(document.body).removeClass(font);
+            $(document.body).addClass(this.value);
+		});
+		
+		
         $("#hardcore").change();
     });
 
@@ -124,7 +173,17 @@
 <body>
     <div id="sidebar">
         <input type="checkbox" id="hardcore" name="hardcore">
-        <label id="hardcore-label" for="hardcore">Hardcore mode</label>
+        <label id="hardcore-label" for="hardcore">Hardcore mode</label><br>
+		
+        <input type="checkbox" id="dark" name="dark">
+        <label id="dark-label" for="dark">Dark mode</label><br>
+		
+		<label id="font-label" for="font">Font</label>
+		<select name="font" id="font">
+		  <option value="verdana">Verdana</option>
+		  <option value="georgia">Georgia</option>
+		  <option value="courier-new">Courier New</option>
+		</select>
     </div>
     <div id="main">
         <div id="progress">
