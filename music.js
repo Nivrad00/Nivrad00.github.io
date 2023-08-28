@@ -1,5 +1,275 @@
 musicData = [
+	
 	{
+		"album": false,
+		"icon": "placeholder-icon.png",
+		"folder": "singles 2023",
+		"tracks": [
+			{
+				"name": "NIVVY'S 380 BPM SUMMER MINIMIX",
+				"file": "NIVVY'S 380 BPM SUMMER MINIMIX.mp3",
+				"date": "aug 2023"
+			}, {
+				"name": "Darius + Rotteen - Two Cirrate Cubiforms (cover)",
+				"file": "cubiforms.mp3",
+				"date": "aug 2023"
+			}, {
+				"name": "Can't Go Home",
+				"file": "cant go home.mp3",
+				"date": "jul 2023"
+			}, {
+				"name": "drum 'n' moose",
+				"file": "drum 'n' moose.mp3",
+				"date": "jun 2023"
+			}, {
+				"name": "PUP - DVP (rmx) (remaster)",
+				"file": "dvp remaster.mp3",
+				"date": "jun 2023"
+			}, {
+				"name": "Bit-Encoded Love Song (remaster)",
+				"file": "bit encoded love song remaster.mp3",
+				"date": "apr 2023"
+			}, {
+				"name": "the bads",
+				"file": "2023-01-07 the bads.mp3",
+				"date": "jan 2023"
+			}
+		]
+	},
+	{
+		"album": true,
+		"icon": "consolation-icon.png",
+		"folder": "Consolation",
+		"tracks": [
+			{
+				"name": "1. _evergreen",
+				"file": "1. _evergreen.wav",
+				"date": ""
+			}, {
+				"name": "2. 90°",
+				"file": "2. 90°.wav",
+				"date": ""
+			}, {
+				"name": "3. 1.4.today",
+				"file": "3. 1.4.today.wav",
+				"date": ""
+			}, {
+				"name": "4. BRIGHT SUNSHINY DAY",
+				"file": "4. BRIGHT SUNSHINY DAY.wav",
+				"date": ""
+			}, {
+				"name": "5. signal_lost",
+				"file": "5. signal_lost.wav",
+				"date": ""
+			}, {
+				"name": "6. OVERCLOCK",
+				"file": "6. OVERCLOCK.wav",
+				"date": ""
+			}, {
+				"name": "7. awesome.mp3",
+				"file": "7. awesome.mp3.wav",
+				"date": ""
+			}, {
+				"name": "8. THESE LOVELY THINGS",
+				"file": "8. THESE LOVELY THINGS.wav",
+				"date": ""
+			}, {
+				"name": "9. console.sleep();",
+				"file": "9. console.sleep();.wav",
+				"date": ""
+			}
+		]
+	},
+	{
+		"album": true,
+		"icon": "deers-icon.png",
+		"folder": "Deers Are Animals",
+		"tracks": [
+			{
+				"name": "1. G-Unit - Poppin' Them Thangs (Niv's Remix)",
+				"file": "1. G-Unit - Poppin' Them Thangs (Niv's Remix).wav",
+				"date": ""
+			}, {
+				"name": "2. Air is Cold",
+				"file": "2. Niv - Air is Cold.wav",
+				"date": ""
+			}, {
+				"name": "3. RANDOM ACCESS MEMORY",
+				"file": "3. Niv - RANDOM ACCESS MEMORY.wav",
+				"date": ""
+			}, {
+				"name": "4. Cavetown - Lemon Boy (Niv's Remix)",
+				"file": "4. Cavetown - Lemon Boy (Niv's Remix).wav",
+				"date": ""
+			}, {
+				"name": "5. Give In to the Wind",
+				"file": "5. Niv - Give In to the Wind.wav",
+				"date": ""
+			}, {
+				"name": "6. TEMPERANCE 4EVER",
+				"file": "6. Niv - TEMPERANCE 4EVER.wav",
+				"date": ""
+			}, {
+				"name": "7. Donkey Kong 64 - DK Rap (Niv's Remix)",
+				"file": "7. Donkey Kong 64 - DK Rap (Niv's Remix).wav",
+				"date": ""
+			}, {
+				"name": "8. SUPER LAZER PISS",
+				"file": "8. Niv - SUPER LAZER PISS.wav",
+				"date": ""
+			}, {
+				"name": "9. Our Happy Ending",
+				"file": "9. Niv - Our Happy Ending.wav",
+				"date": ""
+			}, {
+				"name": "10. Sunrise (feat. Molly)",
+				"file": "10. Niv - Sunrise (feat. Molly).wav",
+				"date": ""
+			}
+		]
+	},
+	{
+		"album": false,
+		"icon": "placeholder-icon.png",
+		"folder": "singles 2020",
+		"tracks": [
+			{
+				"name": "spritsy",
+				"file": "2022-12-25 spritsy.mp3",
+				"date": "dec 2022"
+			}, {
+				"name": "Stay Warm With Me",
+				"file": "2022-12-12 stay warm with me.mp3",
+				"date": "dec 2022"
+			}, {
+				"name": "yoi",
+				"file": "yoi.mp3",
+				"date": "oct 2022"
+			}, {
+				"name": "single cell organism",
+				"file": "single cell organism.mp3",
+				"date": "sep 2022"
+			}, {
+				"name": "birds told me about the apocalypse",
+				"file": "birds told me about the apocalypse.mp3",
+				"date": "sep 2022"
+			}, {
+				"name": "good night mr. lemming",
+				"file": "good night mr. lemming.mp3",
+				"date": "sep 2022"
+			}, {
+				"name": "sleep",
+				"file": "2022-08-15 sleep v2.mp3",
+				"date": "aug 2022"
+			}, {
+				"name": "Mt. Mitchell",
+				"file": "2022-08-06 mt. mitchell.mp3",
+				"date": "aug 2022"
+			}, {
+				"name": "dungeon vibe",
+				"file": "dungeon vibe.mp3",
+				"date": "jul 2022"
+			}, {
+				"name": "dungeon circus",
+				"file": "dungeon circus.mp3",
+				"date": "jul 2022"
+			}, {
+				"name": "dungeon rave",
+				"file": "dungeon rave.mp3",
+				"date": "jul 2022"
+			}, {
+				"name": "dungeon jazz",
+				"file": "dungeon jazz.mp3",
+				"date": "jul 2022"
+			}, {
+				"name": "peppy thing",
+				"file": "2022-07-00 peppy thing.mp3",
+				"date": "jul 2022"
+			}, {
+				"name": "Take It Slow",
+				"file": "2022-05-13 take it slow v2.mp3",
+				"date": "may 2022"
+			}, {
+				"name": "pina colada doodle",
+				"file": "2022-02-05 doodle.mp3",
+				"date": "feb 2022"
+			}, {
+				"name": "cumbum lake",
+				"file": "2022-01-06 cumbum lake.mp3",
+				"date": "jan 2022"
+			}, {
+				"name": "A Reminder",
+				"file": "2022-01-02 a reminder.mp3",
+				"date": "jan 2022"
+			}, {
+				"name": "spacy theme",
+				"file": "2021-12-29 spacy theme.mp3",
+				"date": "dec 2021"
+			}, {
+				"name": "Matt Maltese - As The World Caves In (cover)",
+				"file": "2021-12-20 as the world caves in cover.mp3",
+				"date": "dec 2021"
+			}, {
+				"name": "farts",
+				"file": "2021-12-16 farts.mp3",
+				"date": "dec 2021"
+			}, {
+				"name": "funky sax",
+				"file": "2021-12-15 funky sax.mp3",
+				"date": "dec 2021"
+			}, {
+				"name": "brass doodle",
+				"file": "2021-12-00 brass doodle.mp3",
+				"date": "dec 2021"
+			}, {
+				"name": "black cat waltz",
+				"file": "black cat waltz.mp3",
+				"date": "jul 2021"
+			}, {
+				"name": "dont wanna do chores",
+				"file": "dont wanna do chores.mp3",
+				"date": "jul 2021"
+			}, {
+				"name": "cool",
+				"file": "cool.mp3",
+				"date": "mar 2021"
+			}, {
+				"name": "The A-Pot-Calypse",
+				"file": "pan dnb.mp3",
+				"date": "dec 2020"
+			}, {
+				"name": "more jazzy shit",
+				"file": "more jazzy shit.mp3",
+				"date": "sep 2020"
+			}, {
+				"name": "Deusovi (Smogon Puzzle Hunt 3) - 2-26 Chorded (Niv's Remix)",
+				"file": "Deusovi (Smogon Puzzle Hunt 3) - 2-26 Chorded (Niv's Remix).mp3",
+				"date": "aug 2020"
+			}, {
+				"name": "flower girl dnb",
+				"file": "flower girl.mp3",
+				"date": "2020"
+			}, {
+				"name": "Feelin' Alright",
+				"file": "Feelin' Alright.mp3",
+				"date": "jan 2020"
+			}, {
+				"name": "Happy Ending (WIP)",
+				"file": "Happy Ending (WIP).mp3",
+				"date": "jan 2020"
+			}, {
+				"name": "Immobile",
+				"file": "Immobile.mp3",
+				"date": "jan 2020"
+			}, {
+				"name": "Spacedeer OST",
+				"file": "spacedeer.mp3",
+				"date": "jan 2020"
+			}, 
+		]
+	},
+	{
+		"album": true,
 		"icon": "energy-icon.png",
 		"folder": "Energy",
 		"tracks": [
@@ -47,6 +317,7 @@ musicData = [
 		]
 	},
 	{
+		"album": true,
 		"icon": "soul-icon.png",
 		"folder": "SPEEDCORE FOR THE SOUL",
 		"tracks": [
@@ -74,31 +345,16 @@ musicData = [
 		]
 	},
 	{
+		"album": false,
 		"icon": "placeholder-icon.png",
-		"folder": "newer music",
+		"folder": "singles 2016",
 		"tracks": [
 			{
-				"name": "Feelin' Alright",
-				"file": "Feelin' Alright.mp3",
-				"date": "jan 2020"
-			}, {
-				"name": "Happy Ending (WIP)",
-				"file": "Happy Ending (WIP).mp3",
-				"date": "jan 2020"
-			}, {
-				"name": "Immobile",
-				"file": "Immobile.mp3",
-				"date": "jan 2020"
-			}, {
-				"name": "Spacedeer OST",
-				"file": "spacedeer.mp3",
-				"date": "jan 2020"
-			}, {
 				"name": "=3",
 				"file": "Meow =3.mp3",
 				"date": "dec 2019"
 			}, {
-				"name": "Time Passes",
+				"name": "Time Passes (2019)",
 				"file": "Time Passes.mp3",
 				"date": "dec 2019"
 			}, {
@@ -106,9 +362,25 @@ musicData = [
 				"file": "The Bookless Room.mp3",
 				"date": "nov 2019"
 			}, {
+				"name": "idk (wip)",
+				"file": "idk.wav",
+				"date": "sep 2019"
+			}, {
+				"name": "Ghostly Grotto (SMW port)",
+				"file": "Ghostly Grotto (SMW port).mp3",
+				"date": "aug 2019"
+			}, {
 				"name": "Ghostly Grotto",
 				"file": "Ghostly Grotto.mp3",
 				"date": "aug 2019"
+			}, {
+				"name": "Cyberspace Serenade (SMW port)",
+				"file": "Cyberspace Serenade (SMW Port).mp3",
+				"date": "jul 2019"
+			}, {
+				"name": "Sunset Escape (SMW original)",
+				"file": "Sunset Escape.mp3",
+				"date": "jul 2019"
 			}, {
 				"name": "Tom Johnson - Chord Catalog (Speedcore Remix)",
 				"file": "Tom Johnson - Chord Catalog (Speedcore Remix).mp3",
@@ -129,6 +401,46 @@ musicData = [
 				"name": "Leave Me Alone",
 				"file": "leave me alone.wav",
 				"date": "mar 2019"
+			}, {
+				"name": "BeeSong",
+				"file": "BeeSong.wav",
+				"date": "jan 2019"
+			}, {
+				"name": "chipper amen tune",
+				"file": "chipper amen tune.wav",
+				"date": "jan 2019"
+			}, {
+				"name": "dramatic tune (wip)",
+				"file": "dramatic tune.wav",
+				"date": "jan 2019"
+			}, {
+				"name": "chewy harmony (wip)",
+				"file": "chewy harmony.wav",
+				"date": "dec 2018"
+			}, {
+				"name": "Blue Screen Blues",
+				"file": "Blue Screen Blues.wav",
+				"date": "nov 2018"
+			}, {
+				"name": "Boot Sector Breakdown",
+				"file": "speedcore thing (Boot Sector Breakdown).wav",
+				"date": "nov 2018"
+			}, {
+				"name": "Cyberspace Serenade",
+				"file": "Cyberspace Serenade.wav",
+				"date": "nov 2018"
+			}, {
+				"name": "Logic Gate Lullaby",
+				"file": "Logic Gate Lullaby.wav",
+				"date": "nov 2018"
+			}, {
+				"name": "Malware Mayhem",
+				"file": "!! boss approaching !! (Malware Mayhem).wav",
+				"date": "nov 2018"
+			}, {
+				"name": "Motherboard Melody",
+				"file": "my first beepbox (Motherboard Melody).wav",
+				"date": "nov 2018"
 			}, {
 				"name": "dictionary (wip)",
 				"file": "dictionary (wip).m4a",
@@ -217,71 +529,9 @@ musicData = [
 		]
 	},
 	{
+		"album": false,
 		"icon": "placeholder-icon.png",
-		"folder": "beepbox and SMW ports",
-		"tracks": [
-			{
-				"name": "idk (wip)",
-				"file": "idk.wav",
-				"date": "sep 2019"
-			}, {
-				"name": "Ghostly Grotto (SMW port)",
-				"file": "Ghostly Grotto (SMW port).mp3",
-				"date": "aug 2019"
-			}, {
-				"name": "Cyberspace Serenade (SMW port)",
-				"file": "Cyberspace Serenade (SMW Port).mp3",
-				"date": "jul 2019"
-			}, {
-				"name": "Sunset Escape (SMW original)",
-				"file": "Sunset Escape.mp3",
-				"date": "jul 2019"
-			}, {
-				"name": "BeeSong",
-				"file": "BeeSong.wav",
-				"date": "jan 2019"
-			}, {
-				"name": "chipper amen tune",
-				"file": "chipper amen tune.wav",
-				"date": "jan 2019"
-			}, {
-				"name": "dramatic tune (wip)",
-				"file": "dramatic tune.wav",
-				"date": "jan 2019"
-			}, {
-				"name": "chewy harmony (wip)",
-				"file": "chewy harmony.wav",
-				"date": "dec 2018"
-			}, {
-				"name": "Blue Screen Blues",
-				"file": "Blue Screen Blues.wav",
-				"date": "nov 2018"
-			}, {
-				"name": "Boot Sector Breakdown",
-				"file": "speedcore thing (Boot Sector Breakdown).wav",
-				"date": "nov 2018"
-			}, {
-				"name": "Cyberspace Serenade",
-				"file": "Cyberspace Serenade.wav",
-				"date": "nov 2018"
-			}, {
-				"name": "Logic Gate Lullaby",
-				"file": "Logic Gate Lullaby.wav",
-				"date": "nov 2018"
-			}, {
-				"name": "Malware Mayhem",
-				"file": "!! boss approaching !! (Malware Mayhem).wav",
-				"date": "nov 2018"
-			}, {
-				"name": "Motherboard Melody",
-				"file": "my first beepbox (Motherboard Melody).wav",
-				"date": "nov 2018"
-			}
-		]
-	},
-	{
-		"icon": "placeholder-icon.png",
-		"folder": "older music",
+		"folder": "singles 2012",
 		"tracks": [
 			{
 				"name": "9V rmx",

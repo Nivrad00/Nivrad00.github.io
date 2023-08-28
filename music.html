@@ -8,7 +8,7 @@
 <style>
 	body { background-color: #caf; }
 	.content {
-		margin: auto;
+		margin-left: 20px;
 	} .trackTitle {
 		width: 450px;
 	}
@@ -31,7 +31,7 @@
 		align-items: center;
 		background: #EEE;
 		padding: 5px 8px;
-		width: 400px;
+		width: 350px;
 	}
 	.timeline {
 		flex-grow: 1;
@@ -50,6 +50,8 @@
 	}
 	.time {
 		white-space: nowrap;
+		width: 80px;
+		text-align: center;
 	}
 </style>
 
@@ -67,12 +69,12 @@
 			var icon = musicData[j].icon
 			
 			for (var i = 0; i < tracks.length; i ++) {
-				var path = 'music-and-shit/' + folder + '/' + tracks[i].file;
+				var path = 'music/' + folder + '/' + tracks[i].file;
 				tables[j].innerHTML += '<tr><td><img src="images/' + icon + '"></td>'
 					+ '<td class="trackTitle">' + tracks[i].name + '</td>'
-					+ '<td class="info">' + tracks[i].date + '</td>'
-					+ '<td><audio src="' + path + '" preload="metadata" type="audio/wav"></audio>'
-					+ '<div class="audioplayer"><button class="playButton play"></button><div class="timeline"><div class="playhead"></div></div><div class="time">0:00 / 0:00</div></div>'		
+					+ (musicData[j].album ? '' : '<td class="info">' + tracks[i].date + '</td>')
+					+ '<td><audio src="' + path + '" preload="none" type="audio/wav"></audio>'
+					+ '<div class="audioplayer"><button class="playButton play"></button><div class="timeline"><div class="playhead"></div></div><div class="time">––– / –––</div></div>'		
 					+ '</td></tr>';
 			}
 		}
@@ -184,57 +186,82 @@
 		<a href='misc.html'><span class="fancy">&#120132;</span>isc</a>
     </div>
 	
-	<p>
-		sounds to tickle ur ears
-	</p>
 	
-    <div class="section-header">
-		<p><span class="fancy">&#120124;</span>NERGY</p>
-		<div class="divider"></div>
-    </div>
-    <table class="content">
-		<tr><td>loading...</td></tr>
-    </table>
+	<div style='max-width: 800; margin: auto;'>
+		
+		<div class="section-header">
+			<p><span class="fancy">&#x1D54A;</span>ingles (2023&ndash;Present)</p>
+			<div class="divider"></div>
+		</div>
+		<table class="content">
+			<tr><td>loading...</td></tr>
+		</table>
+		
+		<div class="section-header">
+			<p><span class="fancy" style="font-size: 30px">&#x1D554;</span>onsolation (2023)</p>
+			<div class="divider"></div>
+		</div>
+		<table class="content">
+			<tr><td>loading...</td></tr>
+		</table>
+		
+		<div class="section-header">
+			<p><span class="fancy">&#x1D53B;</span>eers <span class="fancy">&#x1D538;</span>re <span class="fancy">&#x1D538;</span>nimals (2021)</p>
+			<div class="divider"></div>
+		</div>
+		<table class="content">
+			<tr><td>loading...</td></tr>
+		</table>
+		
+		<div class="section-header">
+			<p><span class="fancy">&#x1D54A;</span>ingles (2020&ndash;2023)</p>
+			<div class="divider"></div>
+		</div>
+		<table class="content">
+			<tr><td>loading...</td></tr>
+		</table>
+		
+		<div class="section-header">
+			<p><span class="fancy">&#120124;</span>NERGY (2020)</p>
+			<div class="divider"></div>
+		</div>
+		<table class="content">
+			<tr><td>loading...</td></tr>
+		</table>
+		
+		<div class="section-header">
+			<p><span class="fancy">&#x1D54A;</span>PEEDCORE FOR THE <span class="fancy">&#x1D54A;</span>OUL (2019)</p>
+			<div class="divider"></div>
+		</div>
+		<table class="content">
+			<tr><td>loading...</td></tr>
+		</table>
+		
+		<div class="section-header">
+			<p><span class="fancy">&#x1D54A;</span>ingles (2017&ndash;2019)</p>
+			<div class="divider"></div>
+		</div>
+		<table class="content">
+			<tr><td>loading...</td></tr>
+		</table>
+		
+		<div class="section-header">
+			<p><span class="fancy">&#x1D546;</span>ld <span class="fancy">&#x1D54A;</span>tuff (2012&ndash;2016)</p>
+			<div class="divider"></div>
+		</div>
+		<table class="content">
+			<tr><td>loading...</td></tr>
+		</table>
+		
+		<div id="banners">
+			<a href="http://sanya.gay"><img src="images/sanya-banner.png"></a>
+			<a href="http://thicc.monster/"><img src="images/thicc-banner.gif"></a>
+			<a href="https://twitter.com/whydria"><img src="images/hydria-banner.png"></a>
+			<a href="https://nightoblane.neocities.org/"><img src="images/chrono-banner.jpg"></a>
+			<a href="https://niv.gay/"><img src="images/niv-banner.gif"></a>
+			<br>
+			<span class="smoll">&copy; me 2019&ndash;2023</span>
+		</div>
 	
-    <div class="section-header">
-		<p><span class="fancy">&#x1D54A;</span>PEEDCORE FOR THE <span class="fancy">&#x1D54A;</span>OUL</p>
-		<div class="divider"></div>
-    </div>
-    <table class="content">
-		<tr><td>loading...</td></tr>
-    </table>
-	
-    <div class="section-header">
-		<p><span class="fancy">&#x1D54A;</span>ingles (2017&ndash;Present)</p>
-		<div class="divider"></div>
-    </div>
-    <table class="content">
-		<tr><td>loading...</td></tr>
-    </table>
-	
-    <div class="section-header">
-		<p><span class="fancy">&#x1D544;</span>isc (SMW Ports, Beepbox Tunes)</p>
-		<div class="divider"></div>
-    </div>
-    <table class="content">
-		<tr><td>loading...</td></tr>
-    </table>
-	
-    <div class="section-header">
-		<p><span class="fancy">&#x1D546;</span>ld <span class="fancy">&#x1D54A;</span>hit (2012&ndash;2016)</p>
-		<div class="divider"></div>
-    </div>
-    <table class="content">
-		<tr><td>loading...</td></tr>
-    </table>
-	
-    <div id="banners">
-		<a href="http://thicc.monster/"><img src="images/thicc-banner.gif"></a>
-		<a href="https://twitter.com/whydria"><img src="images/hydria-banner.png"></a>
-		<a href="https://nightoblane.neocities.org/"><img src="images/chrono-banner.jpg"></a>
-		<a href="https://niv.gay/"><img src="images/niv-banner.gif"></a>
-		<br>
-		<span class="smoll">&copy; me 2019&ndash;2021</span>
-    </div>
-	
+	</div>
 </div>
