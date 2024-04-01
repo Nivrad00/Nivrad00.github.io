@@ -6,9 +6,33 @@ musicData = [
 		"folder": "singles 2023",
 		"tracks": [
 			{
-				"name": "NIVVY'S 380 BPM SUMMER MINIMIX",
-				"file": "NIVVY'S 380 BPM SUMMER MINIMIX.mp3",
-				"date": "aug 2023"
+				"name": "dumb puppy hypno funk",
+				"file": "dumb puppy hypno funk.mp3",
+				"date": "jan 2024"
+			}, {
+				"name": "it feels right",
+				"file": "it feels right.mp3",
+				"date": "dec 2023"
+			}, {
+				"name": "keepin up with the joneses",
+				"file": "keepin up with the joneses.mp3",
+				"date": "dec 2023"
+			}, {
+				"name": "radiant",
+				"file": "radiant.mp3",
+				"date": "dec 2023"
+			}, {
+				"name": "shania twaine goes to space",
+				"file": "shania twaine goes to space.mp3",
+				"date": "dec 2023"
+			}, {
+				"name": "Consolation No. 2 Bolin Creek Trail",
+				"file": "Consolation No. 2 Bolin Creek Trail.mp3",
+				"date": "nov 2023"
+			}, {
+				"name": "NIVVY'S 2023 SUMMER MINIMIX V2",
+				"file": "NIVVY'S 2023 SUMMER MINIMIX V2.mp3",
+				"date": "sep 2023"
 			}, {
 				"name": "Darius + Rotteen - Two Cirrate Cubiforms (cover)",
 				"file": "cubiforms.mp3",
