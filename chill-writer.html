@@ -1,0 +1,179 @@
+
+<html>
+<head>
+    <title>A Pretty Chill Writing App</title>
+
+    <style>
+    body {
+        background-color: #f0f0f0;
+        height: 100%;
+        margin: 0;
+    }
+	.verdana #text {
+        font-family: Verdana, sans-serif;
+	}
+	.georgia #text {
+        font-family: Georgia, serif;
+	}
+	.courier-new #text {
+        font-family: "Courier New", monospace;
+	}
+	body.dark {
+        background-color: #111;
+		color: white;
+	}
+    #main {
+        position: absolute;
+        max-width: 800px;
+		max-height: 120px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        top: 10px;
+        margin: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+    }
+	#text-container {
+        width: 100%;
+        top: 10px;
+        bottom: 0px;
+        left: 0px;
+        padding: 0 40px 30px 40px;
+		background-color: white;
+	}
+    #text {
+        width: 100%;
+        border: none;
+        resize: none;
+        outline: none;
+		padding: 0;
+    }
+	#text, #ellipses {
+        font-size: 18px;
+        font-family: Verdana, Geneva, sans-serif;
+		line-height: 1.5em;
+	}
+	.dark #text-container, .dark #ellipses, .dark #text {
+		background-color: #222;
+		color: white;
+	}
+    #text::placeholder {
+        color: #999;
+    }
+	.dark #text::placeholder {
+        color: #666;
+    }
+    #sidebar {
+        position: absolute;
+        padding: 10px;
+        font-size: 16px;
+    }
+    @media (max-width: 1200px) {
+        #main {
+            top: 80px;
+        }
+        #sidebar {
+            max-width: 800px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }    
+    }
+    </style>
+</head>
+<body>
+    <div id="sidebar">		
+        <input type="checkbox" id="dark" name="dark">
+        <label id="dark-label" for="dark">Dark mode</label><br>
+		
+		<label id="font-label" for="font">Font</label>
+		<select name="font" id="font">
+		  <option value="verdana">Verdana</option>
+		  <option value="georgia">Georgia</option>
+		  <option value="courier-new">Courier New</option>
+		</select>
+    </div>
+    <div id="main">
+		<div id="text-container">
+			<div id="ellipses">...</div>
+			<textarea id="text" placeholder="Start writing. You will only be able to see two lines at a time. You will not be able to delete any text. When you're done, click Finished to review your work."></textarea>
+		</div>
+        <button type="button" id="finished">Finished</button>
+        <button type="button" id="copy">Copy</button>
+	</div>
+	
+    <script>
+    let state = "setup"; // setup, writing, finished
+	const text = document.getElementById("text");
+	const textContainer = document.getElementById("text-container");
+	const finished = document.getElementById("finished");
+	const ellipses = document.getElementById("ellipses");
+	const copy = document.getElementById("copy")
+	
+	finished.style.display = "none";
+	ellipses.style.visibility = "hidden";
+	text.style.overflow = "hidden";
+	copy.style.display = "none";
+	
+	text.addEventListener('input', (event) => {
+		if (state == "setup") {
+			state = "writing"
+			text.placeholder = "";
+			finished.style.display = "block";
+		}
+		if (event.currentTarget.scrollHeight > 80)
+			ellipses.style.visibility = "visible";
+	});
+	
+	['input', 'mousedown', 'mouseup', 'contextmenu', 'keydown', 'keyup'].forEach((e) => {
+		text.addEventListener(e, (event) => {
+			let that = event.currentTarget;
+			window.setTimeout(() => that.selectionStart = that.selectionEnd = that.value.length, 0);
+		});
+	});
+
+	text.addEventListener('keydown', (event) => {
+		if (event.key == "Delete" || event.key == "Backspace")
+			event.preventDefault();
+	});
+	
+	text.addEventListener('mousedown', (event) => {
+		event.currentTarget.focus();
+		event.preventDefault();
+	});
+	
+	document.getElementById("dark").addEventListener('change', (event) => {
+		if (event.currentTarget.checked)
+			document.body.classList.add("dark");
+		else
+			document.body.classList.remove("dark");
+	});
+
+	document.getElementById("font").addEventListener('change', (event) => {
+		for (let font of ["verdana", "georgia", "courier-new"])
+			document.body.classList.remove(font);
+		document.body.classList.add(event.currentTarget.value);
+	});
+	
+	finished.addEventListener('click', (event) => {
+        state = "finished";
+		textContainer.classList.add("disabled");
+		textContainer.style.height = "100%";
+		document.getElementById("main").style.maxHeight = "none";
+		text.style.overflow = "auto";
+		text.style.height = "100%";
+        text.readOnly = true;
+		ellipses.style.visibility = "hidden";
+		finished.style.display = "none";
+		copy.style.display = "block";
+	});
+	
+	copy.addEventListener('click', (event) => {
+		navigator.clipboard.writeText(text.value);	
+	});
+    </script>
+</body>
+</html>
