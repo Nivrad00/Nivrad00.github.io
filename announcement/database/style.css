@@ -1,0 +1,104 @@
+body {
+	font-family:		"Open Sans", sans-serif;
+	line-height:		1.5;
+	max-width: 			900px;
+	margin-left:		auto;
+	margin-right:		auto;
+	background-color:	#111;
+	color:				white;
+	margin-bottom:		100px;
+}
+h1 {
+	border-bottom:		1px solid lightgray;
+	font-weight:		normal;
+	margin-top:			15px;
+	margin-bottom:		10px;
+}
+h2 {
+	border-bottom:		1px solid lightgray;
+	font-weight:		normal;
+}
+#navbar {
+	border-bottom:		1px solid gray;
+	padding:			5px;
+}
+#footer {
+	border-top:			1px solid lightgray;
+	font-size:			10px;
+	padding-top:		10px;
+	margin-top:			25px;
+}
+
+#navbar a {
+	margin:				5px;
+}
+a {
+	text-decoration:	none;
+	color:				goldenrod;
+}
+a.active {
+	color:				white;
+}
+#sidebar-outer {
+	background-color:	#111;
+	float:				right;
+}
+#sidebar {
+	width:				320px;
+	border:				1px solid lightgray;
+	margin:				0 0 15px 15px;
+	padding:			10px;
+	font-size:			14px;
+}
+table {
+	font-size:			inherit;
+	border-collapse: 	separate;
+	border-spacing: 	8px;	
+}
+#sidebar img {
+	display: 			block;
+	margin-left: 		auto;
+	margin-right: 		auto;
+	max-width:			100%;
+}
+#sidebar h3 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	text-align:			center;
+	
+}
+.caption {
+	text-align:			center;
+	margin-top:			5px;
+	margin-bottom: 		0;
+}
+#logo {
+	width:				50px;
+}
+#name {
+	width:				140px;
+}
+#header {
+	display:			flex;
+	gap:				10px;
+	align-items:		center;
+	padding-top:		15px;
+}
+#header img {
+	object-fit:			contain;
+}
+.signature {
+	color:				gray;
+	padding-left:		5px;
+}
+#discussion p {
+	margin-bottom:		25px;
+}
+#citations {
+	display: 			block;
+	margin-left: 		auto;
+	margin-right: 		auto;
+	max-width:			500px;
+	padding-top:		10px;
+	
+}

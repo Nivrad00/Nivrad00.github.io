@@ -1,0 +1,99 @@
+<html>
+<head>
+	<title>Victory!</title>
+	<link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet'>
+	<style>
+	body {	
+		font-family:		"Open Sans", sans-serif;
+		font-size:			16px;
+		line-height:		1.5;
+		background-color:	#111;
+		color:				white;
+		padding:			50px 0px;
+	}
+	body * {
+		max-width: 			800px;
+		margin-left:		auto;
+		margin-right:		auto;
+	}
+	p {
+		margin-bottom:		20px;
+	}
+	a {
+		color:				#FFBF00;
+	}
+	.center {
+		text-align:			center;
+	}
+	h1 {
+		font-family:		"Gruppo", sans-serif;
+		font-size:			35px;
+	}
+	@keyframes fade-in {
+		0% {
+			transform: 		translateY(10%);
+			opacity: 		0;
+		}
+		100% {
+			transform: 		translateY(0%);
+			opacity: 		1;
+		}
+	}
+	#header {
+		animation: 			1.5s fade-in;
+	}
+	#logo {
+		max-width:			800px;
+		width:				100%;
+		object-fit: 		contain;
+	}
+	#panorama-container {
+		z-index: 			-10;
+		position: 			relative;
+		top: 				-30px;
+		margin-bottom:		-50px;
+		mask-image: 		linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 1.0) 20%, rgba(0, 0, 0, 1.0) 90%, transparent 100%);
+		max-width: 			1500px;
+	}
+	#panorama {
+		background-image: 	url("panorama.png");
+		max-width: 			1500px;
+		height: 			800px;
+		background-repeat: 	no-repeat;
+		background-size: 	1500px;
+		background-position: center bottom;
+	}
+</style>
+</head>
+<body>
+<div id="header">
+	<div class="center"><img id="logo" src="logo.png"></div>
+	<div class="center">A game by Niv</div>
+</div>
+<div id="panorama-container"><div id="panorama"></div></div>
+<p>Congratulations! This is the end of the <i>Sunset for Evenfall</i> ARG and the official announcement of my upcoming title, <i>Evenfall</i>.</p>
+<p>If you solved the ARG yourself, leave a message in the guestbook to record your accomplishment ;3</p>
+<p class="center"><a href="">Sunset for Evenfall Guestbook</a></p>
+<p>Or, join the Discord to chat with me and other fans.</p>
+<p class="center"><a href="">Evenfall Discord</a></p>
+
+<p>&nbsp;</p>
+
+<h1>ABOUT EVENFALL</h1>
+
+<p>wip...</p>
+
+
+
+<p>&nbsp;</p>
+<h1>FUTURE PLANS</h1>
+<p>Evenfall will be announced publically on [DATE TBD] (as in not locked at the end of an ARG).</p>
+
+<p>Until then, you can keep up with my work at @nivrad00 on Twitter or Bluesky.</p>
+<p class="center"><a href="">Twitter</a> · <a href="">Bluesky</a> </p>
+<p>Or check out my previous game, <i>Purrgatory</i>.
+<p class="center"><a href="">Purrgatory on Steam</a></p>
+<p class="center"><img src="cat.gif"></p>
+
+</body>
+</html>
