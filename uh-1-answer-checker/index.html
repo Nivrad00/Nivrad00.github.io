@@ -1,0 +1,51 @@
+<style>
+	body { margin: 20px }
+</style>
+
+<form onsubmit="return false">
+	<input id="answer">
+	<input type="submit" onclick="check()" value="Check">
+</form>
+<p id="result"></p>
+
+<script>
+var answers = [
+	"ORY",
+	"QRPVORY",
+	"NOZNWBE",
+	"NOZNWBEOROBC",
+	"GLCRO",
+	"HAVIREFNYERPVCVRAG",
+	"CVBA",
+	"ARHGEBA",
+	"FVATHYNE",
+	"CYHENY",
+	"PBZCBFVGRF",
+	"VAGRTREFTERNGREGUNABAR",
+	"UNYVGR",
+	"OYRNPU",
+	"GENTRQL",
+	"PBZRQL"
+]
+
+var meta_answers = [
+	"YBBXNTNVA",
+	"QRNQFCBG"
+]
+
+function rot13(s) {
+  return s.replace(/[A-Z]/gi, c =>
+    "NOPQRSTUVWXYZABCDEFGHIJKLM"["ABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(c)] 
+  )
+}
+
+function check() {
+  var x = document.getElementById("answer").value.toUpperCase().replace(/\s/g,'');
+  if (meta_answers.includes(rot13(x)))
+    document.getElementById("result").innerHTML = "🎉 " + x + " is a correct meta answer!"
+  else if (answers.includes(rot13(x)))
+    document.getElementById("result").innerHTML = "✅ " + x + " is a correct answer!"
+  else
+    document.getElementById("result").innerHTML = "❌ " + x + " is not a correct answer."
+}
+</script>
