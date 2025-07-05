@@ -9,12 +9,21 @@
 		line-height:		1.5;
 		background-color:	#111;
 		color:				white;
-		padding:			50px 0px;
+		padding:			0;
+		margin:				0;
+		margin-bottom:		50px;
 	}
-	body * {
-		max-width: 			800px;
+	#everything-else > * {
+		width: 				100%;
+		max-width: 			830px;
 		margin-left:		auto;
 		margin-right:		auto;
+		padding-left:		30px;
+		padding-right:		30px;
+		box-sizing: 		border-box;
+	}
+	ul	{
+		padding-left:		60px !important;
 	}
 	p {
 		margin-bottom:		20px;
@@ -27,10 +36,17 @@
 	}
 	h1 {
 		font-family:		"Gruppo", sans-serif;
-		font-size:			35px;
+		font-size:			45px;
+		letter-spacing:		2px;
+		margin-bottom:		0;
+		line-height:		1;
 	}
-	@keyframes fade-in {
+	@keyframes logo-animation {
 		0% {
+			transform: 		translateY(10%);
+			opacity: 		0;
+		}
+		30% {
 			transform: 		translateY(10%);
 			opacity: 		0;
 		}
@@ -40,7 +56,14 @@
 		}
 	}
 	#header {
-		animation: 			1.5s fade-in;
+		display: 			flex;
+		flex-direction: 	column;
+        justify-content: 	center; 
+		margin-top:			50px;
+		margin-left:		30px;
+		margin-right:		30px;
+		height:				160px;
+		animation: 			3s logo-animation;
 	}
 	#logo {
 		max-width:			800px;
@@ -50,19 +73,80 @@
 	#panorama-container {
 		z-index: 			-10;
 		position: 			relative;
-		top: 				-30px;
-		margin-bottom:		-50px;
+		top: 				-10px;
 		mask-image: 		linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 1.0) 20%, rgba(0, 0, 0, 1.0) 90%, transparent 100%);
-		max-width: 			1500px;
+		width:				100%;
+	}
+	@keyframes bg-animation {
+		0% {
+			opacity: 		0;
+		}
+		50% {
+			opacity: 		1;
+		}
 	}
 	#panorama {
-		background-image: 	url("panorama.png");
-		max-width: 			1500px;
-		height: 			800px;
+		animation: 			3s bg-animation;
+		background-image: 	url("images/panorama.png");
+		height: 			clamp(calc(1400px / 3840 * 2041), calc(100vw / 3840 * 2041), 100vh);
+		background-size: 	clamp(1400px, 100vw, 100vw);
 		background-repeat: 	no-repeat;
-		background-size: 	1500px;
-		background-position: center bottom;
+		background-position: center top;
 	}
+	.background {
+		width:				100% !important;
+		max-width:			1000px !important;
+		margin-top:			100px;
+		margin-bottom:		-30px;
+		padding:			0 !important;
+	}
+	.background img {
+		mask-image: 		linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 1.0) 30%);
+		width: 				100%;
+	}
+	.character {
+		display: 			flex;
+		gap:				30px;
+		justify-content:	center;
+		margin-top:			10px;
+	}	
+	h2 {
+		font-family:		"Open Sans", sans-serif;
+		font-weight:		normal;
+		font-size:			30px;
+		letter-spacing:		4px;
+		border-bottom:		1px solid white;
+		margin-bottom:		10px;
+		margin-top:			50px;
+		padding-bottom:		10px;
+	}
+	#em {
+		text-align:			right;
+	}
+	.character img {
+		height: 			600px;
+	}
+	.character-description {
+		width:				400px;
+	}
+	@media only screen and (max-width: 600px) {
+		.character {
+			flex-direction:	column;
+			text-align:		center;
+			align-items:	center;
+		}		
+		#em {
+			flex-direction:	column-reverse;
+			text-align:		center;
+		}	
+		#shonkhor img {
+			margin-left:	-80px;
+		}
+		h2 {
+			margin-top:		10px;
+		}
+	}
+	
 </style>
 </head>
 <body>
@@ -71,51 +155,61 @@
 	<div class="center">An upcoming game by Niv</div>
 </div>
 <div id="panorama-container"><div id="panorama"></div></div>
-<p>Congratulations! This is the end of the "Sunset for Evenfall" ARG and the official announcement of my upcoming title, <i>Evenfall</i>.</p>
-<p>If you solved the ARG yourself, leave a message in the guestbook to record your accomplishment ;3</p>
-<p class="center"><a href="https://sunsetforevenfall.atabook.org/">Sunset for Evenfall Guestbook</a></p>
-<p>Or, join the Discord to chat with me and other fans.</p>
-<p class="center"><a href="https://discord.gg/yKnjvMy55n">Evenfall Discord</a></p>
+<div id="everything-else">
+	<p>Congratulations! This is the end of the ARG and the official announcement of my upcoming game: Evenfall, a point-and-click visual novel about befriending robots in a dying city.</p>
+	<p>If you solved the ARG, leave a message in the <a href="https://sunsetforevenfall.atabook.org/">guestbook</a> to record your accomplishment!</p>
+	
+	<p>Evenfall will be announced publically on [DATE TBD]. Until then...</p>
+	<ul>
+			<li>Chat with me and other fans on <a href="https://discord.gg/yKnjvMy55n">Discord</a></li>
+			<li>Keep up with my work at @nivrad00 on <a href="">Twitter</a></li>
+			<li>Or check out my previous game, <a href="">Purrgatory</a></li>
+	</ul>
 
-<p>&nbsp;</p>
+	<p class="background"><img src="images/spaceship.png"></p>
+	<h1>SO WHAT IS THIS GAME ABOUT</h1>
 
-<h1>ABOUT EVENFALL</h1>
+	<p>Evenfall is known as the city of eternal sunset—an ex-mining colony on a remote planet where the sun hangs motionless just below the horizon. Months ago, all of its outgoing communication went dark.</p>
 
-<p>Evenfall is known as the city of eternal sunset—a remote mining colony where the sun hangs motionless just below the horizon. Months ago, all of the planet's outgoing communication went dark.</p>
+	<p>Intrepid technician Indigo, who has always preferred the company of machines over their fellow humans, is sent to diagnose the issue. The first thing they discover? Evenfall is <i>teeming</i> with robots. Indigo quickly hits it off with the locals, from charming servants to mysterious lowlifes.</p>
 
-<p>When intrepid technician Indigo is sent to diagnose the issue, they discover more than they ever signed up for. The first surprise? <i>There are no humans</i>. Indigo finds themself surrounded by artificial life, from administrators delivering programmed platitudes to rabble conserving energy in the city's underbelly.</p>
+	<p>But between cost-cutting megacorps and rusty skywalks, Evenfall is on the brink of collapse. As Indigo digs into the city's secrets, they uncover a conspiracy that might finally spell an end to the twilit metropolis—with Indigo caught in the middle of it.</p>
 
-<p>Furthermore, between rusty skywalks and cost-cutting megacorps, Evenfall is on the brink of collapse. As Indigo digs into the city's secrets, they uncover a conspiracy that might finally spell an end to the twilit metropolis—with Indigo caught in the middle of it.</p>
+	<p class="background"><img src="images/dining_hall.png"></p>
+	<h1>THERE ARE CUTE ROBOTS!!</h1>
+	
+	<p>Meet the bots carving out a life at the far end of the galaxy...</p>
 
+	<div class="character">
+		<div><img src="images/taz.png"></div>
+		<div class="character-description">
+			<h2>TAZ</h1>
+			<p>If you run across this charming loner in a bar, be careful of his silver tongue—he's just as likely to swipe your chits as he is to take you home.</p>
+		</div>
+	</div>
 
-<p>Step into Indigo's shoes and explore a hand-drawn point-and-click world filled with robots of all shapes and sizes.</p>
+	<div class="character" id="em">
+		<div class="character-description">
+			<h2>EM</h1>
+			<p>As one of the last employees in Evenfall's gutted Department of Information, Em knows to keep their head down. But when the streetlights turn off, she dreams of chronicling the city's complex history.</p>
+		</div>
+		<div><img src="images/em.png"></div>
+	</div>
 
-<p>Get to know the robots trying to carve out a life for themselves in a dying city:</p>
-
-<p>Alias: Taz</p>
-<p>If you run across this charming loner in a bar, be careful of his silver tongue--he's just as likely to swipe your credit chit as he is to take you home.</p>
-
-<p>Alias: Em</p>
-<p>As one of the last employees in Evenfall's gutted Department of Information, Em knows to keep their head down. But when the streetlights turn off, they dream of chronicling the city's complex history.</p>
-
-<p>Alias: Shonkhor</p>
-<p>Abandoned by his multibillionaire owner, Shonkhor is in search of a new directive to follow--and someone to fill the human-shaped hole in his heart.</p>
-
-<p>Alias: Avispa & Polilla</p>
-<p>????????????????</p>
-
-<p>Alias: Null Pointer/Nix/Cosmo</p>
-<p>????????????????</p>
-
-<p>&nbsp;</p>
-<h1>FUTURE PLANS</h1>
-<p><i>Evenfall</i> will be announced publically on [DATE TBD].</p>
-
-<p>Until then, you can keep up with my work at @nivrad00 on Twitter or Bluesky.</p>
-<p class="center"><a href="">Twitter</a> · <a href="">Bluesky</a> </p>
-<p>Or check out my previous game, <i>Purrgatory</i>.
-<p class="center"><a href="">Purrgatory on Steam</a></p>
-<p class="center"><img src="cat.gif"></p>
+	<div class="character" id="shonkhor">
+		<div><img src="images/shonkhor.png"></div>
+		<div class="character-description">
+			<h2>SHONKHOR</h1>
+			<p>Abandoned by his multibillionaire owner, Shonkhor is in search of a new directive to follow. But can he find someone to fill the human-shaped hole in his heart?</p>
+		</div>
+	</div>
+	
+	<p class="background"><img src="images/construction.png"></p>
+	<h1>WHAT NOW?</h1>
+	<p>Stay tuned for more info...</p>
+	<p class="center"><img src="cat.gif"></p>
+	
+</div>
 
 </body>
 </html>
