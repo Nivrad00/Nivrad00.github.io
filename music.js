@@ -6,6 +6,50 @@ musicData = [
 		"folder": "singles 2023",
 		"tracks": [
 			{
+				"name": "niv plays chopin's nocturne in e flat",
+				"file": "niv plays chopin's nocturne in e flat.mp3",
+				"date": "may 2025"
+			}, {
+				"name": "STANDING IN LINE FOR THE BATHROOM OF LIFE",
+				"file": "STANDING IN LINE FOR THE BATHROOM OF LIFE.mp3",
+				"date": "apr 2025"
+			}, {
+				"name": "VENISON",
+				"file": "VENISON.mp3",
+				"date": "feb 2025"
+			}, {
+				"name": "GOT PLANS BABY",
+				"file": "GOT PLANS BABY.mp3",
+				"date": "jan 2025"
+			}, {
+				"name": "staring at the golden sun of your eyes",
+				"file": "staring at the golden sun of your eyes.mp3",
+				"date": "dec 2024"
+			}, {
+				"name": "Crossing of Animal",
+				"file": "Crossing of Animal.mp3",
+				"date": "dec 2024"
+			}, {
+				"name": "https:// en.wikipedia.org/ wiki/ List_of_emojis",
+				"file": "emojis2.mp3",
+				"date": "sep 2024"
+			}, {
+				"name": "DJ I KNOW IM NOT THE ONLY ONE REMIX",
+				"file": "DJ I KNOW IM NOT THE ONLY ONE REMIX.mp3",
+				"date": "sep 2024"
+			}, {
+				"name": "SPEED OF TIME BABY",
+				"file": "SPEED OF TIME BABY.mp3",
+				"date": "jul 2024"
+			}, {
+				"name": "one two three four",
+				"file": "one two three four.mp3",
+				"date": "may 2024"
+			}, {
+				"name": "SPEAKERPHONE",
+				"file": "SPEAKERPHONE.mp3",
+				"date": "apr 2024"
+			}, {
 				"name": "dumb puppy hypno funk",
 				"file": "dumb puppy hypno funk.mp3",
 				"date": "jan 2024"
