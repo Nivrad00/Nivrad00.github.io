@@ -6,7 +6,9 @@ body {
 	margin-right:		auto;
 	background-color:	#111;
 	color:				white;
-	margin-bottom:		100px;
+	margin-bottom:		50px;
+	padding-left:		25px;
+	padding-right:		25px;
 }
 h1 {
 	border-bottom:		1px solid lightgray;
@@ -41,12 +43,23 @@ a.active {
 }
 #sidebar-outer {
 	background-color:	#111;
-	float:				right;
+}
+@media screen and (width >= 650px) {
+	#sidebar-outer {
+		float:			right;
+	}
+	#sidebar {
+		width:			320px;
+		margin:			0 0 15px 15px;
+	}
+}
+@media screen and (width < 650px) {
+	#sidebar {
+		margin-top:		15px;
+	}
 }
 #sidebar {
-	width:				320px;
 	border:				1px solid lightgray;
-	margin:				0 0 15px 15px;
 	padding:			10px;
 	font-size:			14px;
 }
@@ -99,6 +112,7 @@ table {
 	margin-left: 		auto;
 	margin-right: 		auto;
 	max-width:			500px;
+	width:				100%;
 	padding-top:		10px;
 	
 }
