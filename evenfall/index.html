@@ -1,0 +1,347 @@
+<html>
+<head>
+	<title>Evenfall</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet'>
+	<style>
+	body {	
+		font-family:		"Open Sans", sans-serif;
+		font-size:			16px;
+		line-height:		1.5;
+		background-color:	#111;
+		color:				white;
+		padding:			0;
+		margin:				0;
+	}
+	.everything-else {
+		width: 				100%;
+		max-width: 			830px;
+		margin-left:		auto;
+		margin-right:		auto;
+		padding-left:		30px;
+		padding-right:		30px;
+		box-sizing: 		border-box;		
+	}
+	p {
+		margin-bottom:		15px;
+	}
+	a {
+		color:				#FFBF00;
+	}
+	.center {
+		text-align:			center;
+	}
+	h1 {
+		font-family:		"Gruppo", sans-serif;
+		font-size:			45px;
+		letter-spacing:		2px;
+		margin-bottom:		20px;
+		line-height:		1;
+	}
+	@keyframes logo-animation {
+		0% {
+			transform: 		translateY(10%);
+			opacity: 		0;
+		}
+		30% {
+			transform: 		translateY(10%);
+			opacity: 		0;
+		}
+		100% {
+			transform: 		translateY(0%);
+			opacity: 		1;
+		}
+	}
+	#header {
+		display: 			flex;
+		flex-direction: 	column;
+        justify-content: 	center; 
+		margin-top:			50px;
+		margin-left:		30px;
+		margin-right:		30px;
+		height:				160px;
+		animation: 			3s logo-animation;
+	}
+	#header > p {
+		margin:				0;	
+		font-size:			18px;
+	}
+	#logo {
+		max-width:			800px;
+		width:				100%;
+		object-fit: 		contain;
+	}
+	#panorama-container {
+		z-index: 			-10;
+		position: 			relative;
+		top: 				-10px;
+		mask-image: 		linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 1.0) 20%, rgba(0, 0, 0, 1.0) 90%, transparent 100%);
+		width:				100%;
+	}
+	@keyframes bg-animation {
+		0% {
+			opacity: 		0;
+		}
+		50% {
+			opacity: 		1;
+		}
+	}
+	#panorama {
+		animation: 			3s bg-animation;
+		background-image: 	url("images/panorama.png");
+		height: 			clamp(calc(1400px / 3840 * 2041), calc(100vw / 3840 * 2041), 100vh);
+		background-size: 	clamp(1400px, 100vw, 100vw);
+		background-repeat: 	no-repeat;
+		background-position: center top;
+	}
+	.background {
+		width:				100% !important;
+		max-width:			1000px !important;
+		margin-top:			100px;
+		margin-bottom:		-20px;
+		padding:			0 !important;
+		margin-left:		auto;
+		margin-right:		auto;
+		box-sizing: 		border-box;		
+	}
+	.background img {
+		mask-image: 		linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 1.0) 30%);
+		width: 				100%;
+	}
+	.character {
+		display: 			flex;
+		gap:				30px;
+		justify-content:	center;
+		margin-top:			10px;
+	}	
+	h1 {
+		font-family:		"Open Sans", sans-serif;
+		font-weight:		normal;
+		font-size:			30px;
+		letter-spacing:		1px;
+		margin-top:			50px;
+	}
+	h2	{
+		border-bottom:		1px solid white;
+		font-family:		"Open Sans", sans-serif;
+		font-weight:		normal;
+		font-size:			24px;
+		letter-spacing:		1px;
+		padding-bottom: 	10px;
+		margin-bottom:	 	10px;
+	}
+	#em {
+		text-align:			right;
+	}
+	.character img {
+		height: 			300px;
+		mask-image: 		linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 1.0) 30%);
+	}
+	.character-description {
+		max-width:				500px;
+	}
+	@media only screen and (max-width: 600px) {
+		.character {
+			flex-direction:	column;
+			text-align:		center;
+			align-items:	center;
+		}		
+		#em {
+			flex-direction:	column-reverse;
+			text-align:		center;
+		}	
+		#shonkhor img {
+			margin-left:	-80px;
+		}
+		h2 {
+			margin-top:		10px;
+		}
+	}
+	.button {
+		height:				40px;
+		border:				1px solid white;
+		display:			flex;
+		justify-content:	center;
+		align-items:		center;
+		gap:				10px;
+		color:				white;
+		text-decoration:	none;
+		flex-grow:			1;
+	}
+	.button img {
+		height:				50%;
+	}
+	.normal:hover {
+		background-color:	black;
+		color:				white;
+		border:				1px solid black;
+		filter: 			invert(100%);
+	}
+	.button-container {
+		display:			flex;
+		justify-content:	center;
+		gap:				12px;
+		margin-bottom:		12px;
+		max-width:			400px;
+		margin-left:		auto;
+		margin-right:		auto;
+	}
+	.special {
+		color:				#FFBF00;
+		border:				1px solid #FFBF00;
+	}
+	.special:hover {
+		background-color:	#FFBF00;
+		color:				black;
+	}
+	.special:hover img {
+		filter: 			brightness(0%);
+	}
+	.yellow {
+		color:				#FFBF00;
+	}
+	#footer {
+		margin-top:			100px;
+		padding:			10px;
+		border-top:			1px solid white;
+		text-align:			center;
+		font-size:			12px;
+	
+	}
+	
+	
+</style>
+</head>
+<body>
+<div id="header">
+	<div class="center"><img id="logo" src="logo.png"></div>
+	<p class="center">A game about befriending robots in a dying city.</i></p>
+</div>
+<div id="panorama-container"><div id="panorama"></div></div>
+<div class="everything-else">
+	
+	<p class="center">Evenfall is an upcoming point-and-click visual novel by Niv, with music by turingsghost. The game is still in development, but you can learn more below!</p>
+	
+	<div class="button-container">
+		<a href="https://nivrad00.itch.io/evenfall" class="normal button">
+			<div>itch.io</div>
+			<img src="icons/itchio-icon.png">
+		</a>
+		<a href="." class="normal button">
+			<div>Steam</div>
+			<img src="icons/steam-icon.png">
+		</a>
+	</div>
+	
+	<div class="button-container">
+		
+		<a href="https://bsky.app/profile/nivrad00.bsky.social" class="normal button">
+			<div>Bluesky</div>
+			<img src="icons/bluesky-icon.png">
+		</a>
+		<a href="https://x.com/nivrad00" class="normal button">
+			<div>Twitter</div>
+			<img src="icons/twitter-icon.png">
+		</a>
+		<a href="https://discord.gg/yKnjvMy55n" class="normal button">
+			<div>Discord</div>
+			<img src="icons/discord-icon.png">
+		</a>
+	</div>
+	
+	<p>&nbsp</p>
+	<p class="center">Listen to turingsghost's music here!</p>
+	<div class="button-container">
+		<a href="https://turingsghost.neocities.org/" class="normal button">
+			<div>turingsghost</div>
+			<img src="icons/turingsghost-icon.png">
+		</a>
+	</div>
+	
+	<p>&nbsp</p>
+	<p class="center">If you're excited for Evenfall, please consider supporting my work on Patreon.</p>
+	<div class="button-container">
+		<a href="https://patreon.com/nivrad00" class="special button">
+			<div>Patreon</div>
+			<img src="icons/patreon-icon.png">
+		</a>
+	</div>
+	
+</div>
+<p class="background"><img src="images/construction.png"></p>
+<div class="everything-else">
+	<h1>THE STORY</h1>
+
+	<p>Evenfall is known as the city of eternal sunset—an ex-mining colony on a remote planet where the sun hangs motionless below the horizon. One day, all of its outgoing communication goes dark.</p>
+
+	<p>Intrepid technician Indigo, who has always preferred the company of machines over their fellow humans, is sent to diagnose the issue. The first thing they discover? Evenfall is <i>teeming</i> with robots. They quickly hit it off with the locals.</p>
+
+	<p>But with megacorporate support dwindling, Evenfall is on the brink of collapse. As Indigo digs into the city's secrets, they uncover a conspiracy that might finally spell an end to the twilit metropolis—with Indigo caught in the middle.</p>
+
+</div>
+<p class="background"><img src="images/bar.png"></p>
+<div class="everything-else">
+
+	<h1>THERE ARE CUTE ROBOTS!</h1>
+	
+	<p>Meet the characters carving out a life at the far end of the galaxy...</p>
+
+	<div class="character">
+		<div><img src="images/taz.png"></div>
+		<div class="character-description">
+			<h2>TAZ</h1>
+			<p>If you run across this charming loner in a bar, be careful of his silver tongue—he's just as likely to swipe your chits as he is to take you home.</p>
+		</div>
+	</div>
+
+	<div class="character" id="em">
+		<div class="character-description">
+			<h2>EM</h1>
+			<p>As one of the last employees in Evenfall's gutted Department of Information, Em knows to keep their head down. But when the streetlights turn off, she dreams of chronicling the city's complex history.</p>
+		</div>
+		<div><img src="images/em.png"></div>
+	</div>
+
+	<div class="character" id="shonkhor">
+		<div><img src="images/shonkhor.png"></div>
+		<div class="character-description">
+			<h2>SHONKHOR</h1>
+			<p>Abandoned by his multibillionaire owner, Shonkhor is in search of a new directive to follow. But can he find someone to fill the human-shaped hole in his heart?</p>
+		</div>
+	</div>
+
+
+</div>
+<p class="background"><img src="images/stacks.png"></p>
+<div class="everything-else">
+
+	<h1>ABOUT THE DEVELOPER</h1>
+	
+	<p>Hi, I'm Niv. I'm a creator deer who makes video games about friendship and exploration. I also have a soft spot for first-person shooters, rhythm games, and puzzle games. You can play my previous game Purrgatory on <a href="https://nivrad00.itch.io/purrgatory">itch.io</a> or <a href="https://store.steampowered.com/app/1713610/Purrgatory/">Steam</a>.</p>
+
+	<p>I've been creating for a long time, but I'm new to making money off of it. Currently I work a day job at a library to support myself and my partner, and I can only develop Evenfall in my spare time. With your support, I hope to one day make a living off of creating games like this. Thank you for helping make my dreams a reality!</p>
+	<p class="center"><img width="180px" src="images/happy-niv.png"></p>
+
+</div>
+<p class="background"><img src="images/spaceship.png"></p>
+<div class="everything-else">
+
+	<h1>DID YOU KNOW THERE WAS AN ARG?</h1>
+	
+	<p>Evenfall's original announcement was hidden behind an ARG, or an internet scavenger hunt. I've always wanted to do one of these! You can still play the <a href="https://niv.gay/announcement/">Evenfall ARG</a> online.</p>
+	<p>My eternal gratitude to the talented voice actors who featured in the ARG:</p>
+	<ul>
+			<li>Shonkhor: <a href="https://www.youtube.com/@LunacyEcho">LunacyEcho</a></li>
+			<li>Knutsy: <a href="https://bsky.app/profile/felix-arcana.bsky.social">Felix Arcana</a></li>
+			<li>Director / Jeb: <a href="https://www.instagram.com/autumn_rahrah">Autumn Fearing-Kabler</a></li>
+	</ul>
+	
+	<p>As well as my playtesters, LunacyEcho and Clarity.</p>
+</div>
+
+<div id="footer">
+	© Niv 2025
+</div>
+
+</body>
+</html>
