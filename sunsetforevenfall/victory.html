@@ -39,29 +39,15 @@
 		margin-bottom:		20px;
 		line-height:		1;
 	}
-	@keyframes logo-animation {
-		0% {
-			transform: 		translateY(10%);
-			opacity: 		0;
-		}
-		30% {
-			transform: 		translateY(10%);
-			opacity: 		0;
-		}
-		100% {
-			transform: 		translateY(0%);
-			opacity: 		1;
-		}
-	}
 	#header {
 		display: 			flex;
 		flex-direction: 	column;
         justify-content: 	center; 
 		margin-top:			50px;
+		margin-bottom:		30px;
 		margin-left:		30px;
 		margin-right:		30px;
 		height:				160px;
-		animation: 			3s logo-animation;
 	}
 	#header > p {
 		margin:				0;	
@@ -71,33 +57,10 @@
 		width:				100%;
 		object-fit: 		contain;
 	}
-	#panorama-container {
-		z-index: 			-10;
-		position: 			relative;
-		top: 				-10px;
-		mask-image: 		linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 1.0) 20%, rgba(0, 0, 0, 1.0) 90%, transparent 100%);
-		width:				100%;
-	}
-	@keyframes bg-animation {
-		0% {
-			opacity: 		0;
-		}
-		50% {
-			opacity: 		1;
-		}
-	}
-	#panorama {
-		animation: 			3s bg-animation;
-		background-image: 	url("images/panorama.png");
-		height: 			clamp(calc(1400px / 3840 * 2041), calc(100vw / 3840 * 2041), 100vh);
-		background-size: 	clamp(1400px, 100vw, 100vw);
-		background-repeat: 	no-repeat;
-		background-position: center top;
-	}
 	.background {
 		width:				100%!important;
 		max-width:			1000px !important;
-		margin-top:			100px;
+		margin-top:			50px;
 		margin-bottom:		-30px;
 		padding:			0 !important;
 		margin-left:		auto;
@@ -154,26 +117,24 @@
 </style>
 </head>
 <body>
+<p class="background"><img src="images/construction.png"></p>
 <div id="header">
 	<div class="center"><img id="logo" src="logo.png"></div>
 	<p class="center">An upcoming game by Niv</p>
 	<p class="center">with music by turingsghost</p>
 </div>
-<div id="panorama-container"><div id="panorama"></div></div>
 <div class="everything-else">
-	<p>Congratulations! This is the end of the puzzle/ARG and the official announcement of my upcoming game: Evenfall, a point-and-click visual novel about befriending robots in a dying city.</p>
-	<p>If you got to this point, leave a message in the <a href="https://sunsetforevenfall.atabook.org/">guestbook</a> to record your accomplishment!</p>
-	
 	<p class="center">- - -</p>
 	
-	<p><b style="color:#f44">Please avoid spoiling this ARG!</b>  Evenfall will be revealed publicly on August 16th, 2025. Until then, give other people a chance to solve it ;)</p>
+	<p>Congratulations! This is the end of the puzzle/ARG. As a reward, here is a cute picture of a cat.</p>
 	
-	<p>Here's what you can do for now...</p>
+	<p class="center"><img src="cat.gif"></p>
+	
+	<p>This ARG ran from July to August 2025 and served as the announcement for my upcoming game, Evenfall. </p>
 	<ul>
-			<li>Chat with me and other fans on <a href="https://discord.gg/yKnjvMy55n">Discord</a></li>
-			<li>Keep up with my work on <a href="https://x.com/nivrad00">Twitter</a></li>
-			<li>Listen to the music of <a href="https://turingsghost.neocities.org/">turingsghost</a>
-			<li>Or check out my previous game, <a href="https://store.steampowered.com/app/1713610/Purrgatory/">Purrgatory</a></li>
+	<li>Leave a message in the <a href="https://sunsetforevenfall.atabook.org/">guestbook</a> to record your accomplishment!</li>
+	
+	<li>Learn more about Evenfall on its <a href="https://niv.gay/evenfall">website</a>.</li>
 	</ul>
 	
 	<p class="center">- - -</p>
@@ -186,55 +147,5 @@
 	
 	<p>As well as my playtesters, LunacyEcho and Clarity.</p>
 </div>
-
-<p class="background"><img src="images/spaceship.png"></p>
-<div class="everything-else">
-	<h1>So What Is This Game About&nbsp;?</h1>
-
-	<p>Evenfall is known as the city of eternal sunset—an ex-mining colony on a remote planet where the sun hangs motionless just below the horizon. One day, all of its outgoing communication goes dark.</p>
-
-	<p>Intrepid technician Indigo, who has always preferred the company of machines over their fellow humans, is sent to diagnose the issue. The first thing they discover? Evenfall is <i>teeming</i> with robots. Indigo quickly hits it off with the locals, from charming servants to mysterious lowlifes.</p>
-
-	<p>But between cost-cutting megacorps and rusty skywalks, Evenfall is on the brink of collapse. As Indigo digs into the city's secrets, they uncover a conspiracy that might finally spell an end to the twilit metropolis—with Indigo caught in the middle of it.</p>
-</div>
-
-<p class="background"><img src="images/dining_hall.png"></p>
-<div class="everything-else">
-	<h1>Are There Cute Robots&nbsp;?&nbsp;!</h1>
-	
-	<p>Yes! Meet some of the bots carving out a life at the far end of the galaxy...</p>
-
-	<div class="character">
-		<div><img src="images/taz.png"></div>
-		<div class="character-description">
-			<h2>TAZ</h1>
-			<p>If you run across this charming loner in a bar, be careful of his silver tongue—he's just as likely to swipe your chits as he is to take you home.</p>
-		</div>
-	</div>
-
-	<div class="character" id="em">
-		<div class="character-description">
-			<h2>EM</h1>
-			<p>As one of the last employees in Evenfall's gutted Department of Information, Em knows to keep their head down. But when the streetlights turn off, she dreams of chronicling the city's complex history.</p>
-		</div>
-		<div><img src="images/em.png"></div>
-	</div>
-
-	<div class="character" id="shonkhor">
-		<div><img src="images/shonkhor.png"></div>
-		<div class="character-description">
-			<h2>SHONKHOR</h1>
-			<p>Abandoned by his multibillionaire owner, Shonkhor is in search of a new directive to follow. But can he find someone to fill the human-shaped hole in his heart?</p>
-		</div>
-	</div>
-</div>
-
-<p class="background"><img src="images/construction.png"></p>
-<div class="everything-else">
-	<h1>Can I See a Cute Drawing of a Cat Now&nbsp;?</h1>
-	<p>Yes you can!</p>
-	<p class="center"><img src="cat.gif"></p>
-</div>
-
 </body>
 </html>
