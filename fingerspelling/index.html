@@ -59,9 +59,9 @@ function update_letter(current_word, i) {
 	if(all_letters.indexOf(word.charAt(i)) >= 0) { 
 		// check for double letter 
 		if(word.charAt(i) == word.charAt(i-1)) { 
-			document.images['ASLalphabet'].src='images/' + word.charAt(i) + word.charAt(i++) + ".gif"; 
+			document.images['ASLalphabet'].src='images/' + word.charAt(i).toLowerCase() + word.charAt(i++).toLowerCase() + ".gif"; 
 		} else { 
-			document.images['ASLalphabet'].src='images/' + word.charAt(i++) + ".gif"; 
+			document.images['ASLalphabet'].src='images/' + word.charAt(i++).toLowerCase() + ".gif"; 
 		} 
 	} else { 
 		document.images['ASLalphabet'].src="images/blank.gif"; 
