@@ -91,5 +91,6 @@ body {
 
 #banners {
     margin-top:			  25px;
-	border:				  none;
+	margin-bottom:		  15px;
+	font-size:			  small;
 }
