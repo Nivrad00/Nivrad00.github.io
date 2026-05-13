@@ -53,6 +53,34 @@
 		width: 80px;
 		text-align: center;
 	}
+	
+	.info {
+	  cursor: pointer;
+	  
+	}
+	.info:hover .tooltip {
+	  visibility: visible;
+	}
+	.info img {
+		width: 15px;
+		border: none;
+		position: relative;
+		top: 2px;
+	}
+	.tooltip {
+	  cursor: auto;
+	  visibility: hidden;
+	  max-width: 500px;
+	  border: 1px solid black;
+	  padding: 10px;
+	  position: absolute;
+	  background-color: white;
+	  z-index: 1;
+	}
+	
+	.date {
+		width: 120px;
+	}
 </style>
 
 <script src="music.js"></script> 
@@ -71,8 +99,8 @@
 			for (var i = 0; i < tracks.length; i ++) {
 				var path = 'music/' + folder + '/' + tracks[i].file;
 				tables[j].innerHTML += '<tr><td><img src="images/' + icon + '"></td>'
-					+ '<td class="trackTitle">' + tracks[i].name + '</td>'
-					+ (musicData[j].album ? '' : '<td class="info">' + tracks[i].date + '</td>')
+					+ '<td class="trackTitle">' + tracks[i].name + (tracks[i].info ? '<span class="info"> <img src="images/info.svg"><span class="tooltip">' + tracks[i].info + '</span></span>' : '') + '</td>'
+					+ (musicData[j].album ? '' : '<td class="date">' + tracks[i].date + '</td>')
 					+ '<td><audio src="' + path + '" preload="none" type="audio/wav"></audio>'
 					+ '<div class="audioplayer"><button class="playButton play"></button><div class="timeline"><div class="playhead"></div></div><div class="time">––– / –––</div></div>'		
 					+ '</td></tr>';
