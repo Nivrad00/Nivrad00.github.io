@@ -6,8 +6,13 @@ musicData = [
 		"folder": "singles 2023",
 		"tracks": [
 			{
+				"name": "cómo es ser un bichito",
+				"file": "como es ser un bichito.mp3",
+				"date": "july 2026",
+				"info": "soy hormiguita<br>me muevo las patitas<br>muy pequeña pa tocar el piano<br>así que simplemente bailo<br>además necesito volver al trabajo<br>muy ocupada pa dedicarme al contrabajo<br><br>o sí somos chiquitos<br>o sí sentimos el ritmo<br>o sí somos chiquitos<br>es así ser un bichito<br><br>soy abejita<br>siempre hago lo que pueda<br>me encuentro un poco torpe<br>no juego ningún deporte<br>pero para una cosita no soy mala<br>qué elegante parezco bailando salsa<br><br>o sí somos chiquitos<br>o sí sentimos el ritmo<br>o sí somos chiquitos<br>es así ser un bichito<br><br>me contento con bailar<br><br>la reina dice que hago un buen trabajo<br><br>mido uno centímetro<br><br>¡agua!"
+			}, {
 				"name": "NIVVY'S SUMMER SPEEDCORE MIX '26 (20% COOLER EDIT)",
-				"file": "mix26_20%.mp3",
+				"file": "mix26_20.mp3",
 				"date": "may 2026",
 				"info": "TRACK LIST<br>M.V. Matthews feat. IBM 7090 - Daisy Bell<br>Meg & Dia - Monster<br>Shania Twain - Life's About to Get Good<br>Barrett Wilbert Weed - I Will Be Okay (from Helluva Boss)<br>The Queestons - Fever<br>Chris Lake & Aluna - Beggin'<br>Vylet Pony - Antonypmh<br>Darius + Rotteen - Two Cirrate Cubiforms<br>Benson Boone - Beautiful Things (DJ Desa Remix)<br>Alka Yagnik, Sonu Nigam - Chamiya (from Dulhan Hum Le Jayenge)<br>Mahito Yokota - Gusty Garden Galaxy (from Super Mario Galaxy)<br>Joost - Europapa<br>Becca - I'm Alive<br>Gullyteen - L3T U G0<br>The Quick Brown Fox - CRT"
 			}, {
